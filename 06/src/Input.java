@@ -1,11 +1,19 @@
+import java.util.Scanner;
+
 public class Input {
     public static void main(String[] args) {
-        //какой-то код по вводу с клавиатуры double
-        System.out.println("test");
-        System.out.println("test2");
-        System.out.println("test3");
-        System.out.println("тест изменения имени пользователю");
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("самые новые изменения");
+        double d = scanner.nextDouble();
+        System.out.print("d = ");
+        System.out.println(d);
+
+        byte b = scanner.nextByte();
+        System.out.print("b = ");
+        System.out.println(b);
+
+        short s = scanner.nextShort();
+        System.out.print("s = ");
+        System.out.println(s);
     }
 }
