@@ -14,11 +14,11 @@ public class MileKilometr {
 
         if (s.equals(k)) {
             System.out.println("km");
-            double v = i * 1.6;
+            double v = i / 1.6;
             System.out.println("В " + i + " км " + v + " мл");
         } else if (s.equals(m)) {
             System.out.println("ml");
-            double w = i / 1.6;
+            double w = i * 1.6;
             System.out.println("В " + i + " мл " + w + "км");
         }
     }
