@@ -33,6 +33,14 @@ public class PtBegin extends PT {
         put(square, perimeter);
     }
 
+    public static void begin9() {
+        double a = getDouble();
+        double b = getDouble();
+        double square = a * b;
+        double perimeter = 2 * ( a + b );
+        put(square, perimeter);
+    }
+
     /**
      *
      */
@@ -40,7 +48,7 @@ public class PtBegin extends PT {
 
     }
     public static void begin5(){
-        double a = getDouble()
+        double a = getDouble();
 
     }
     public  static void integer1(){
