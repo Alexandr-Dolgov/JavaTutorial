@@ -41,3 +41,7 @@ crashlytics-build.properties
 fabric.properties
 
 *.iml
+
+*/**/*.iml
+
+/*/*.iml
