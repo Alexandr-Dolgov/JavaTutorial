@@ -1,6 +1,6 @@
 public class MyTask extends PT {
     public static void solve() throws Exception {
-        String s = "Integer1";
+        String s = "Begin9";
         task(s);
         Class.forName("Pt" + stringWithoutDigitSuffix(s)).getMethod(s.toLowerCase()).invoke(null);
     }
