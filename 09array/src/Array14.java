@@ -11,10 +11,6 @@ public class Array14 {
         for (int i = 0; i < length; i = i + 1) {
             a[i] = scanner.nextInt();
         }
-        //for (int i = 0; i<length; i=i+1){
-        //System.out.println(a[i]);
-        //}
-        System.out.println("выводим отсортированный массив:");
         for (int i = 0; i < length; i = i + 1) {
             for (int j = length - 1; j > i; j = j - 1) {
                 if (a[j] < a[j - 1]) {
@@ -24,6 +20,8 @@ public class Array14 {
                 }
             }
         }
+
+        System.out.println("выводим отсортированный массив:");
         for (int i = 0; i < length; i = i + 1) {
             System.out.println(a[i]);
         }

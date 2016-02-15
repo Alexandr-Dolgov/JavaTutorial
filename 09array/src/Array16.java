@@ -12,12 +12,20 @@ public class Array16 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        System.out.println("введите границы массива:");
-        int length = scanner.nextInt();//// TODO: 15.02.2016 сделать вещественные границы
-        int[] a = new int[length];
+        System.out.println("введите границы количества элементов массива:");
+        int minLength = scanner.nextInt();
+        int maxLength = scanner.nextInt();
+        int length = minLength + random.nextInt(maxLength - minLength);
+        double[] a = new double[length];
+
+        System.out.println("введите границы для элементов массива:");
+        double minValue = scanner.nextDouble();
+        double maxValue = scanner.nextDouble();
+
         System.out.println("массив:");
         for (int i = 0; i < length; i = i + 1) {
-            a[i] = random.nextInt(length);
+            double value = random.nextDouble();
+            a[i] = value;
             System.out.println(a[i]);
         }
         double sum = 0;

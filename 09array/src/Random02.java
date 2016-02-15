@@ -11,8 +11,11 @@ public class Random02 {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         System.out.println("введите число:");
-        int count = scanner.nextInt();
-        int number = random.nextInt(count+1) - count / 2;
-        System.out.println(number);
+        int x = scanner.nextInt();
+        for (int i = 0; i < 100; i++) {
+            int number = random.nextInt(x+1) - random.nextInt(2 * x);
+            System.out.print(number + " ");
+        }
+
     }
 }

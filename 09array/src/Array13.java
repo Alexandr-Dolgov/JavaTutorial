@@ -14,16 +14,16 @@ public class Array13 {
         for (int i = 0; i < length; i = i + 1) {
             System.out.println(a[i]);
         }
-        int max = a[0];
+        int imax = 0;
         for (int i = 0; i < length; i = i + 1) {
-            if (a[max] < a[i]) {
-                max = a[i];
+            if (a[imax] < a[i]) {
+                imax = a[i];
             }
         }
-        System.out.println("масимальный элемент = " + a[max]);
+        System.out.println("масимальный элемент = " + a[imax]);
         int tmp = a[0];
-        a[0] = a[max];
-        a[max] = tmp;
+        a[0] = a[imax];
+        a[imax] = tmp;
         for (int i = 0; i < length; i = i + 1) {
             System.out.println(a[i]);
         }
