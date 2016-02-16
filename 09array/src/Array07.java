@@ -14,13 +14,23 @@ public class Array07 {
         for (int i = 0; i < length; i = i + 1) {
             System.out.println(a[i]);
         }
+
+
+
+
+        //int min;
+        System.out.println(Array.min());
+
+    }
+    static int min(int[] a) {
         int min = a[0];
-        for (int i = 0; i < length; i = i + 1) {
+        for (int i = 0; i < a.length; i = i + 1) {
             if (min > a[i]) {
                 min = a[i];
             }
         }
-        System.out.println("минимальный лемент = " + min);
-
+        //System.out.println("минимальный лемент = " + min);
+        return min;
     }
+
 }
