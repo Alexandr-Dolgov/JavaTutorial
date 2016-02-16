@@ -22,3 +22,12 @@
 
 //метод возвращает количество положительных элементов массива а
 06 static int quantityPositiveElement(int[] a)
+
+метод возвращает массив отсортированный по возрастанию
+07 static int[] sortAscending(int[] a)
+
+метод возвращает массив отсортированный по убыванию
+08 static int[] sortDescending(int[] a)
+
+09 static double sum(double[] a)                //сумма всех элементов
+10 static double multiplication(double[] a)     //произведение всех элементов
