@@ -19,7 +19,8 @@ public class Array07 {
 
 
         //int min;
-        System.out.println(Array.min());
+        //int[] arr  = {1, 3};
+        System.out.println(Array07.min(arr));
 
     }
     static int min(int[] a) {
