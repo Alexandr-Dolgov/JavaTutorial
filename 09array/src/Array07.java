@@ -19,7 +19,7 @@ public class Array07 {
 
 
         //int min;
-        //int[] arr  = {1, 3};
+        int[] arr  = {1, 3};
         System.out.println(Array07.min(arr));
 
     }

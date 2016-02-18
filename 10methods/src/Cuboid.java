@@ -1,18 +1,18 @@
-public class RectangularParallelepiped {
+public class Cuboid {
     //Класс ПрямоугольныйПараллепипед
     //каждый метод принимает три стороны
     //01 периметр
     //02 объем
     //03 площадь
     public static void main(String[] args) {
-        RectangularParallelepiped.perimeterRectangularParallelepiped(1, 4, 5);
-        RectangularParallelepiped.volumeRectangularParallelepiped(6, 7, 8);
-        RectangularParallelepiped.areaRectangularParallelepiped(5, 5, 7);
+        System.out.println("периметр = " + Cuboid.perimeter(1, 4, 5));
+
+        Cuboid.volumeRectangularParallelepiped(6, 7, 8);
+        Cuboid.areaRectangularParallelepiped(5, 5, 7);
     }
 
-    static void perimeterRectangularParallelepiped(int sideA, int sideB, int sideC) {
-        int perimeter = sideA + sideB + sideC;
-        System.out.println("периметр = " + perimeter);
+    static int perimeter(int sideA, int sideB, int sideC) {
+        return sideA + sideB + sideC;
     }
 
     static void volumeRectangularParallelepiped(int sideA, int sideB, int sideC) {
