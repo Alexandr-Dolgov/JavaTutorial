@@ -15,6 +15,7 @@ public class MethodsVoid {
     }
 
     static void my() {
+
         System.out.println("привет из метода my()");
     }
 

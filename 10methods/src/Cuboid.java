@@ -4,24 +4,23 @@ public class Cuboid {
     //01 периметр
     //02 объем
     //03 площадь
-    public static void main(String[] args) {
-        System.out.println("периметр = " + Cuboid.perimeter(1, 4, 5));
-
-        Cuboid.volumeRectangularParallelepiped(6, 7, 8);
-        Cuboid.areaRectangularParallelepiped(5, 5, 7);
+    public static void main(String[] args) {//изменил название переменных, сделал методы возвращаемые
+        System.out.println("периметр ПрямоугольныйПараллепипед = " + Cuboid.perimeter(1, 4, 5));
+        System.out.println("объем ПрямоугольныйПараллепипед = " + Cuboid.volumeRectangularParallelepiped(6, 7, 8));
+        System.out.println("площадь ПрямоугольныйПараллепипед = " + Cuboid.areaRectangularParallelepiped(5, 5, 7));
     }
 
     static int perimeter(int sideA, int sideB, int sideC) {
+
         return sideA + sideB + sideC;
     }
 
-    static void volumeRectangularParallelepiped(int sideA, int sideB, int sideC) {
-        int volume = sideA * sideB * sideC;
-        System.out.println("объем = " + volume);
+    static int volumeRectangularParallelepiped(int sideA, int sideB, int sideC) {
+        return sideA * sideB * sideC;
+
     }
 
-    static void areaRectangularParallelepiped(int sideA, int sideB, int sideC) {
-        int volume = sideA * sideB * sideC * 4;
-        System.out.println("площадь = " + volume);
+    static int areaRectangularParallelepiped(int sideA, int sideB, int sideC) {
+        return sideA * sideB * sideC * 4;
     }
 }
