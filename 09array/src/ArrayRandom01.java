@@ -19,11 +19,11 @@ public static void main(String[] args) {
     System.out.println("введите min и max границы самого элемнта:");
     int minValue = scanner.nextInt();
     int maxValue = scanner.nextInt();
-    int value = minValue + random.nextInt(maxValue-minValue);
+
 
     for (int i = 0; i<length; i = i+1){
-        a[i] = random.nextDouble();
-
+        int value = minValue + random.nextInt(maxValue-minValue);
+        a[i] = value + random.nextDouble();
     }
     for (int i=0; i<length; i=i+1){
         System.out.println(a[i]);
