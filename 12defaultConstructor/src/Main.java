@@ -6,8 +6,6 @@ public class Main {
         d1 = null;  //говорим что ссылка b1 ни на что не ссылается
 
         InitialValue i1 = new InitialValue();
-
-
     }
 
 }
