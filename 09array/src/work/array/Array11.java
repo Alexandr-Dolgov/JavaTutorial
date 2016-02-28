@@ -1,10 +1,12 @@
+package work.array;
+
 import java.util.Scanner;
 
-public class Array10 {
-    //10 вывести на экран номер минимального элемента
+public class Array11 {
+    //11 вывести на экран номер максимального элемента массива
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("введите клличество элементов в массиве:");
+        System.out.println("введите количество элементов в массиве:");
         int length = scanner.nextInt();
         int[] a = new int[length];
         System.out.println("введите элементы массива:");
@@ -12,15 +14,16 @@ public class Array10 {
             a[i] = scanner.nextInt();
         }
         for (int i = 0; i < length; i = i + 1) {
+            System.out.println(a[i]);
         }
-        int min = a[0];
+        int max = a[0];
         int index = 0;
         for (int i = 0; i < length; i = i + 1) {
-            if (min > a[i]) {
-                min = a[i];
+            if (max < a[i]) {
+                max = a[i];
                 index = i;
             }
         }
-        System.out.println("номер минимального элемента = " + index);
+        System.out.println("номер максимального элемента = " + index);
     }
 }

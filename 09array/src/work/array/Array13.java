@@ -1,7 +1,9 @@
+package work.array;
+
 import java.util.Scanner;
 
-public class Array08 {
-    //08 вывести на экран максимальный элемент
+public class Array13 {
+    //13 поменять местами первый элемент и максимальный
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("введите количество элементов в массиве:");
@@ -14,12 +16,18 @@ public class Array08 {
         for (int i = 0; i < length; i = i + 1) {
             System.out.println(a[i]);
         }
-        int max = a[0];
+        int imax = 0;
         for (int i = 0; i < length; i = i + 1) {
-            if (max < a[i]) {
-                max = a[i];
+            if (a[imax] < a[i]) {
+                imax = a[i];
             }
         }
-        System.out.println("максимальное элемент = " + max);
+        System.out.println("масимальный элемент = " + a[imax]);
+        int tmp = a[0];
+        a[0] = a[imax];
+        a[imax] = tmp;
+        for (int i = 0; i < length; i = i + 1) {
+            System.out.println(a[i]);
+        }
     }
 }

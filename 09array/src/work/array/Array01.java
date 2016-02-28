@@ -1,3 +1,5 @@
+package work.array;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 //01 вывести последний элемент массива на экран

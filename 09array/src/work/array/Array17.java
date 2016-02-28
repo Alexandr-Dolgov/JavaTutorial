@@ -1,3 +1,5 @@
+package work.array;
+
 import java.util.Scanner;
 
 public class Array17 {

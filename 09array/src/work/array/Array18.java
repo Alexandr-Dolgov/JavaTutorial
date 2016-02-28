@@ -1,3 +1,4 @@
+package work.array;
 
 import java.util.Scanner;
 

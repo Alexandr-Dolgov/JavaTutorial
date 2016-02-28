@@ -1,3 +1,5 @@
+package work.random;
+
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 
 import java.util.Random;

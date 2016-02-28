@@ -1,9 +1,9 @@
-import java.util.Random;
+package work.array;
+
 import java.util.Scanner;
 
-
-public class Array16 {
-//    16 вывести на экран среднее арифметическое
+public class Array05 {
+    //05 вывести на экран только элементы с нечетными номерами
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("введите количество элементов в массиве:");
@@ -13,10 +13,13 @@ public class Array16 {
         for (int i = 0; i < length; i = i + 1) {
             a[i] = scanner.nextInt();
         }
-        int sum = 0;
         for (int i = 0; i < length; i = i + 1) {
-            sum = sum + a[i];
+            System.out.println(a[i]);
         }
-        System.out.println(sum);
+        System.out.println("элементы с нечетными номерми в массиве:");
+        for (int i = 0; i < length; i = i + 1) {
+            if (i % 2 == 1)
+                System.out.println(a[i]);
+        }
     }
 }

@@ -1,7 +1,9 @@
+package work.array;
+
 import java.util.Scanner;
 
-public class Array11 {
-    //11 вывести на экран номер максимального элемента массива
+public class Array08 {
+    //08 вывести на экран максимальный элемент
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("введите количество элементов в массиве:");
@@ -15,13 +17,11 @@ public class Array11 {
             System.out.println(a[i]);
         }
         int max = a[0];
-        int index = 0;
         for (int i = 0; i < length; i = i + 1) {
             if (max < a[i]) {
                 max = a[i];
-                index = i;
             }
         }
-        System.out.println("номер максимального элемента = " + index);
+        System.out.println("максимальное элемент = " + max);
     }
 }

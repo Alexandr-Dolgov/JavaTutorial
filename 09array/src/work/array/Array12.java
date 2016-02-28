@@ -1,7 +1,9 @@
+package work.array;
+
 import java.util.Scanner;
 
-public class Array02 {
-    //02 вывести на экран элемент массива с номером 0
+public class Array12 {
+    //12 поменять в массиве первый и последний элемент местами и вывести полученный массив
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("введите количество элементов в массиве:");
@@ -14,7 +16,12 @@ public class Array02 {
         for (int i = 0; i < length; i = i + 1) {
             System.out.println(a[i]);
         }
-        int n = a[0];
-        System.out.println("элемент массива с номером 0 = " + n);
+        System.out.println("меняем первый и последний элемент местами:");
+        int tmp = a[0];
+        a[0] = a[length - 1];
+        a[length - 1] = tmp;
+        for (int i = 0; i < length; i = i + 1) {
+            System.out.println(a[i]);
+        }
     }
 }
