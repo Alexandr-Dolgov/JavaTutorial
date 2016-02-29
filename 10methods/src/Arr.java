@@ -19,7 +19,6 @@ public class Arr {
         Arr.print(a);
 
         int min = Arr.min(a);
-
         System.out.println(min);
 
     }

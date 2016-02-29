@@ -1,4 +1,4 @@
-package word;
+package Work;
 
 public class Word {
 

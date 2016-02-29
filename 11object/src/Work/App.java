@@ -1,4 +1,6 @@
-package word;
+package Work;
+
+import Work.Word;
 
 import java.util.Scanner;
 
@@ -16,7 +18,7 @@ public class App {
                 if (index == words.length - 1) {
                     index = 0;
                 } else {
-                    index++;
+                   index++;
                 }
                 words[index].display();
             } else if (input.equals("prev")) {
