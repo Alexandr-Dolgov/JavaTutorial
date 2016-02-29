@@ -1,4 +1,4 @@
-package Work;
+package AppWord;
 
 public class Word {
 
@@ -12,6 +12,10 @@ public class Word {
     public void display() {
         System.out.println(word);
         quantityDisplays++;
+    }
+
+    public int getQuantityDisplays() {
+        return quantityDisplays;
     }
 
     public void println() {
