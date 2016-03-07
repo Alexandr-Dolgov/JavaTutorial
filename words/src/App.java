@@ -8,25 +8,24 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Words words = new Words();
+
         Scanner scanner = new Scanner(System.in);
-        instruction();
+
+        System.out.println("ведите eng или rus");
+
+        String inputEng = scanner.next();
+        Words words;
+        switch (inputEng){
+            case "eng": words = new Words(false); break;
+            case "rus": words = new Words(true); break;
+            default: System.out.println("некорректный ввод, перезапустите программу и попробуйте еще раз"); return;
+        }
+
         String input = scanner.next();
-
-
+          //Ctrl + B, Ctrl + LKM
+        instruction();
         while (!input.equals("exit")) {
-
-//            if (input.equals("eng")){//выбор языка
-//                boolean onRus = true;
-//                if (onRus) {
-//                    words.language();
-//                }
-//            }
-
-
-
             switch (input) {
-
                 case "next":
                     words.displayNext();
                     break;

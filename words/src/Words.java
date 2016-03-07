@@ -4,13 +4,13 @@ public class Words {
     private Word[] words;
     private int index;
 
-    public Words() {
+    public Words(boolean onRussian) {
         words = new Word[]{
-                new Word("мир", "world", true),
-                new Word("привет", "hello", true),
-                new Word("кто", "who", true),
-                new Word("что", "what", true),
-                new Word("мед", "honey", true)};
+                new Word("мир", "world", onRussian),
+                new Word("привет", "hello", onRussian),
+                new Word("кто", "who", onRussian),
+                new Word("что", "what", onRussian),
+                new Word("мед", "honey", onRussian)};
     }
 
     public void displayNext() {
