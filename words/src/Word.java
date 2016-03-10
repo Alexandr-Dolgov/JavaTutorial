@@ -1,14 +1,10 @@
+
 public class Word {
 
     private String russian;
     private String english;
     boolean onRussian;
-    private String word;
-    private int quantityDisplay;
-
-//    public Word(String english){
-//        this.english = english;
-//    }
+    private int quantityDisplay = 0;
 
     public Word(String rus, String eng, boolean onRus) {
         russian = rus;
@@ -16,19 +12,23 @@ public class Word {
         onRussian = onRus;
     }
 
-    public void displayEn() {
-        System.out.println(english);
-        quantityDisplay++;
+
+    public void displayWords() {
+        if (onRussian == false) {System.out.println(english);
+            quantityDisplay++;
+        }else System.out.println(russian);
+            quantityDisplay++;
     }
 
-    public void displayRus() {
-        System.out.println(russian);
-
-
+    public int getQuantityDisplay() {
+        return quantityDisplay;
     }
 
     public void println() {
-        System.out.println(english + " " + quantityDisplay);}//// TODO: 29.02.2016 статистика ru
+        if (onRussian==false) {System.out.println(english + " " + quantityDisplay);
+        }else System.out.println(russian + " " + quantityDisplay);
 
 
+
+    }
 }
