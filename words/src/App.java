@@ -14,36 +14,40 @@ public class App {
         System.out.println("ведите eng или rus");
 
         String inputEng = scanner.next();
+
         Words words;
+
         switch (inputEng){
             case "eng": words = new Words(false); break;
             case "rus": words = new Words(true); break;
             default: System.out.println("некорректный ввод, перезапустите программу и попробуйте еще раз"); return;
         }
 
+//        System.out.println("введите слово с клавиатуры");
+//        String wordNew[] = new String[5];
+//        for (int i = 0; i <5 ; i++) {
+//            wordNew[i]= scanner.next();
+//            System.out.println(wordNew[i]);
+//        }
+//        for (int i = 0; i <5 ; i++) {
+//            System.out.println(wordNew[i]);
+//
+//        }
+        instruction();
         String input = scanner.next();
           //Ctrl + B, Ctrl + LKM
-        instruction();
+
         while (!input.equals("exit")) {
             switch (input) {
-                case "next":
-                    words.displayNext();
-                    break;
-                case "prev":
-                    words.displayPrev();
-                    break;
-                case "rand":
-                    words.displayRandom();
-                    break;
-                case "rnd":
-                    words.displayRandomNotPopular();
-                    break;
-                default:
-                    System.out.println("некорректный ввод");
-                    instruction();
-                    break;
+                case "next":words.displayNext();break;
+                case "prev":words.displayPrev();break;
+                case "rand":words.displayRandom();break;
+                case "rnd" :words.displayRandomNotPopular();break;
+                case "add" :words.addition();break;
+
+                default:System.out.println("некорректный ввод");instruction();break;
             }
-            input = scanner.next();
+            input = scanner.next();//используем через объект
         }
         System.out.println("программа завершена, вот...");
         words.print();
@@ -55,4 +59,6 @@ public class App {
         System.out.println("rand - случайное слово");
         System.out.println("exit - выход из программы");
     }
+
+
 }

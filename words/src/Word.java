@@ -12,21 +12,23 @@ public class Word {
         onRussian = onRus;
     }
 
-    public void displayRus() {
-        System.out.println(russian);
-        quantityDisplay++;
+
+    public void displayWords() {
+        if (onRussian == false) {System.out.println(english);
+            quantityDisplay++;
+        }else System.out.println(russian);
+            quantityDisplay++;
     }
 
     public int getQuantityDisplay() {
         return quantityDisplay;
     }
 
-//    public void displayEng() {
-//        System.out.println(english);
-//        quantityDisplay++;
-//    }
-
     public void println() {
-        System.out.println(russian + " " + quantityDisplay);
+        if (onRussian==false) {System.out.println(english + " " + quantityDisplay);
+        }else System.out.println(russian + " " + quantityDisplay);
+
+
+
     }
 }

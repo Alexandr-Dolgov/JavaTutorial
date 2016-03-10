@@ -14,7 +14,7 @@ public class Word {
         quantityDisplays++;
     }
 
-    public int getQuantityDisplays() {
+    public int getQuantityDisplays() {//возвращает количество показов
         return quantityDisplays;
     }
 

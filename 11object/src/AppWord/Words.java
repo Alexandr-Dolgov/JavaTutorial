@@ -30,12 +30,12 @@ public class Words {
     public void displayRandom() {
         Random random = new Random();
         int randomIndex = random.nextInt(words.length);
-        words[randomIndex].display();
+        words[randomIndex].display();//записывает в случайный индекс
     }
 
-    public void displayRandomNotPopular() {
+    public void displayRandomNotPopular() {//найти наименьшее количество показов
         int length = quantityNotPopularWords();
-        Word[] notPopularWords = new Word[length];
+        Word[] notPopularWords = new Word[length];//создаем массив непопулярных слов
         int minQuantityDisplays = minQuantityDisplays();
         int j = 0;
         for (int i = 0; i < words.length; i++) {
@@ -59,9 +59,9 @@ public class Words {
         return quantity;
     }
 
-    private int minQuantityDisplays() {
+    private int minQuantityDisplays() {//возвращает минимальное количество показов
         int minQuantityDisplays = words[0].getQuantityDisplays();
-        for (int i = 1; i < words.length; i++) {
+        for (int i = 0; i < words.length; i++) {
             if (minQuantityDisplays < words[i].getQuantityDisplays()) {
                 minQuantityDisplays = words[i].getQuantityDisplays();
             }

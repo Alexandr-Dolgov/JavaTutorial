@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Words {
@@ -15,18 +16,18 @@ public class Words {
 
     public void displayNext() {
         index = (index == words.length - 1) ? 0 : index + 1;
-        words[index].displayRus();
+        words[index].displayWords();
     }
 
     public void displayPrev() {
         index = (index == 0) ? words.length - 1 : index - 1;
-        words[index].displayRus();
+        words[index].displayWords();
     }
 
     public void displayRandom() {
         Random random = new Random();
         int randomIndex = random.nextInt(words.length);
-        words[randomIndex].displayRus();
+        words[randomIndex].displayWords();
     }
 
     public void displayRandomNotPopular() {
@@ -41,7 +42,7 @@ public class Words {
         }
         Random random = new Random();
         int randomIndex = random.nextInt(notPopularWords.length);
-        notPopularWords[randomIndex].displayRus();
+        notPopularWords[randomIndex].displayWords();
     }
 
     private int quantityNotPopularWords() {
@@ -66,8 +67,17 @@ public class Words {
 
     public void print() {
         for (int i = 0; i < words.length; i++) {
-            System.out.println(i + " : ");
+            System.out.print(i + ": ");
             words[i].println();
         }
     }
+    public void addition(){//увеличение массива
+        ArrayList<String> addWord = new ArrayList<String>();
+        addWord.add(0,"путь");
+        System.out.println(addWord.get(1));
+        addWord.set(0,"путь");
+
+
+    }
+
 }
