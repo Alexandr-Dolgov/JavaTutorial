@@ -49,8 +49,9 @@ public class Words {
         int quantity = 0;
         int minQuantityDisplays = minQuantityDisplays();
         for (int i = 0; i < words.length; i++) {
-            if (words[0].getQuantityDisplay() == minQuantityDisplays) ;
-            quantity++;
+            if (words[i].getQuantityDisplay() == minQuantityDisplays) {
+                quantity++;
+            }
         }
         return quantity;
     }
@@ -58,7 +59,7 @@ public class Words {
     private int minQuantityDisplays() {
         int minQuantityDisplays = words[0].getQuantityDisplay();
         for (int i = 1; i < words.length; i++) {
-            if (minQuantityDisplays < words[i].getQuantityDisplay()) {
+            if (words[i].getQuantityDisplay() < minQuantityDisplays) {
                 minQuantityDisplays = words[i].getQuantityDisplay();
             }
         }

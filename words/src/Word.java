@@ -14,10 +14,8 @@ public class Word {
 
 
     public void displayWords() {
-        if (onRussian == false) {System.out.println(english);
-            quantityDisplay++;
-        }else System.out.println(russian);
-            quantityDisplay++;
+        System.out.println((onRussian) ? russian : english);
+        quantityDisplay++;
     }
 
     public int getQuantityDisplay() {
