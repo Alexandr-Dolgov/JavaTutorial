@@ -1,17 +1,30 @@
-import java.util.ArrayList;
 import java.util.Random;
 
-public class Words {
-    private Word[] words;
+
+
+public class Dictionary {
+    private Word[] words;//объявление переменной, ссылка на массив содержащая тип массива
     private int index;
 
-    public Words(boolean onRussian) {
-        words = new Word[]{
+    public Dictionary(boolean onRussian) {
+        words = new Word[]{//определение и динамическая групповая инициализация, words ссылка на массив
                 new Word("мир", "world", onRussian),
                 new Word("привет", "hello", onRussian),
                 new Word("кто", "who", onRussian),
                 new Word("что", "what", onRussian),
                 new Word("мед", "honey", onRussian)};
+
+    }
+
+
+    public void addWord(String rus, String eng, boolean onRus) {
+        Word[] newWords = new Word[words.length+1];
+        for (int i = 0; i <words.length ; i++) {
+            newWords[i] = words[i];
+        }
+        Word newWord = new Word(rus, eng, onRus);
+        newWords[words.length] = newWord;
+        words = newWords;
     }
 
     public void displayNext() {
@@ -72,13 +85,4 @@ public class Words {
             words[i].println();
         }
     }
-    public void addition(){//увеличение массива
-        ArrayList<String> addWord = new ArrayList<String>();
-        addWord.add(0,"путь");
-        System.out.println(addWord.get(1));
-        addWord.set(0,"путь");
-
-
-    }
-
 }
