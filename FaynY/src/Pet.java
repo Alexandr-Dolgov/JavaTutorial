@@ -1,8 +1,15 @@
 public class Pet {
+
     int age;
     float weight;
     float height;
     String color;
+
+    PetMaster petMaster = new PetMaster();
+    Fish fish = new Fish();
+
+
+
 
     public void sleep(){//метод можно вызвать из другого класса public
         //не возвращает никаких данных void

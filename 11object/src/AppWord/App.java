@@ -3,6 +3,7 @@ package AppWord;
 import java.util.Scanner;
 
 public class App {
+
     public static void main(String[] args) {
         instruction();
         Words words = new Words();

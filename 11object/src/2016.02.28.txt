@@ -10,7 +10,7 @@ private int quantityDisplays
 public Work.Word(String word)
 
 
-Класс Work.App с точкой входа
+Класс Work.PointCreateAlt с точкой входа
 где будет инициализировать массив объектов типа Work.Word
 
 затем в "бесконечном" цикле while будем считывать с клавиатуры

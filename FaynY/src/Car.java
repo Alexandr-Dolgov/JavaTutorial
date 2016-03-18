@@ -14,6 +14,7 @@ public class Car {
     int distance;
 
     public void  start(){
+
         System.out.println("start");
     }
 
@@ -25,4 +26,5 @@ public class Car {
         distance = howlong*60;
         return distance;
     }
+
 }

@@ -1,12 +1,12 @@
 public class Fish extends Pet{
 
-    int currentDepth=0;/*атрибут класса или экземпляра класса, срок жижни такой же как и у объекта Fish,
+    int currentDepth=0;/*атрибут класса или экземпляра класса, срок жизни такой же как и у объекта Fish,
 могут использоваться всеми методами класса и в некоторых случаях доступны для др. классов
 */
-    public static void main(String[] args) {
-      Fish myLittleFish = new Fish();
-      myLittleFish.sleep();
-    }
+//    public static void main(String[] args) {
+//
+//    }
+//
 
     public int dive(int howDeep){
         currentDepth = currentDepth + howDeep;
@@ -23,7 +23,8 @@ public class Fish extends Pet{
         return currentDepth;//возвращает значение вызывающему классу
     }
     public String say(String something){
-
+        Fish myLittleFish = new Fish();
+        myLittleFish.sleep();
         return "Ты чё не знаешь, что рыбы не разговаривают?";
     }
 

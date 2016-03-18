@@ -1,5 +1,7 @@
 public class FishMaster {
+
     public static void main(String[] args) {
+
         Fish myFish = new Fish();
         myFish.dive(95);//вызов метода dive с разными параметрами
         myFish.dive(3);

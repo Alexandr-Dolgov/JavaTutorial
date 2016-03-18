@@ -8,6 +8,7 @@ public class Dog extends Object {
 
     @Override //annotation - аннотации
     public String toString() {
+
         return "color = " + color + ", age = " + age + ", weight = " + weight;
     }
 

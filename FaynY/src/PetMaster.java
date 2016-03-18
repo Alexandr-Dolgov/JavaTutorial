@@ -1,4 +1,5 @@
 public class PetMaster {
+
     public static void main(String[] args) {
 
        String petReaction;//определили переменную petReaction
@@ -21,6 +22,9 @@ public class PetMaster {
 //Для вызова в ст. мет. main кл. PetMaster нестат. мет. этого же кл. создаем в мет. main экз. об. PetMaster  и с помщью объявленной перем. через точку вызываем мет. переменнаяТочкаИмяМетодаСкобкиТочкаЗапятая
 //Для вызова в ст. мет. main кл. PetMaster статического метода этого же кл. используем имяМетодаТочкаСкобкиТочкаЗапятая
 
+    }
+    public void print(){
+        System.out.println(1);
     }
 
 }
