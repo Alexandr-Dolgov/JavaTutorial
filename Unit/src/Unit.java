@@ -14,14 +14,9 @@ public class Unit {
     }
 
     public void go(Point point){
-        p.y = p.y + Math.sin(angleTurn/360);
-        //p.x =
-
-        double nx = 0;
-        double ny = 0;
-        Point np = new Point(nx, ny);
-        p = np;
-
+        double r = Math.sqrt( Math.pow(point.x - p.x, 2) + Math.pow(point.y - p.y, 2) );
+        quantityHourGo = quantityHourGo + (r / speed);
+        p = point;
     }
 
     public double go(){
