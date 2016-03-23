@@ -14,7 +14,11 @@ public class AppFlowLayout {
         JLabel label1 = new JLabel("a");
         JTextField textField1 = new JTextField(10);
 
-        panel1.add(label1);
+        JLabel label2 = new JLabel("a");
+        JTextField textField2 = new JTextField(10);
+
+
+        panel1.add(label2);
         panel1.add(textField1);
 
         frame.add(panel1);
