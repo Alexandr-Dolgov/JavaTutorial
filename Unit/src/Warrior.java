@@ -1,8 +1,25 @@
 public class Warrior extends Unit {
 
-    public double uantityHarvest;
-    public double quantityHarvestHour;
+    private int i;
 
-        super();
+    //    public double uantityHarvest;
+    //    public double quantityHarvestHour;
+    //
+    //        super();
 
+    public Warrior(double d){
+        super(d);
+        i = 100;
+    }
+
+    public Warrior(){
+        super(3);
+    }
+
+    @Override
+    public String toString() {
+        String s = "" + 1 + super.toString() + "int" + i;
+        System.out.println(s);
+        return s;
+    }
 }

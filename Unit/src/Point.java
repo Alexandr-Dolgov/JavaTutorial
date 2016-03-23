@@ -7,6 +7,9 @@ public class Point {
         this.y = y;
     }
 
+    public String toString() {
+        return super.toString() + " x = " + x;
+    }
 }
 
 
