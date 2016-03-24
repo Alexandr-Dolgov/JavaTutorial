@@ -11,15 +11,13 @@ public class AppListener {
         frame.setSize(400, 100);
 
         JPanel panel1 = new JPanel(new FlowLayout());
+
+        MyListener listener = new MyListener();
+
         JButton buttonA = new JButton("a");
-
-        MyActionListener actionListener = new MyActionListener();
-        buttonA.addActionListener(actionListener);
-
+        buttonA.addActionListener(listener);
         JButton buttonB = new JButton("b");
-
-        MyFocusListener focusListener = new MyFocusListener();
-        buttonB.addFocusListener(focusListener);
+        buttonB.addFocusListener(listener);
 
         panel1.add(buttonA);
         panel1.add(buttonB);
