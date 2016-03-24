@@ -8,8 +8,7 @@ public class AppFlowLayout {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(200, 400);
 
-        JPanel panel1 = new JPanel();
-        panel1.setLayout(new FlowLayout());
+        JPanel panel1 = new JPanel(new FlowLayout());
 
         JLabel label1 = new JLabel("a");
         JTextField textField1 = new JTextField(10);

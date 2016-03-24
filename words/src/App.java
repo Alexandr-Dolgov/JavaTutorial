@@ -54,6 +54,7 @@ public class App {
         System.out.println("prev - предыдущее слово");
         System.out.println("rand - случайное слово");
         System.out.println("rnd - добавить показ случайного среди тех, у кого количество показов наименьшее");
+        System.out.println("add - добавить слово");
         System.out.println("exit - выход из программы");
     }
 

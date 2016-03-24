@@ -3,8 +3,8 @@ import java.awt.*;
 
 //какие еще есть панели
 //использовать не GridLayout а FlowLayout
-//в mainPanel добавить 3 и 4 layaut с разным расположением
-//методы, которые есть у frame
+//в mainPanel добавить 3 и 4 Layaut с разным расположением
+//методы, которые есть у Frame
 
 /*
 Layout Managers схемы размещения
@@ -41,7 +41,7 @@ public class AppWork {
         panel2.add(new JButton("d"));
         panel2.add(new JButton("f"));
 
-        JPanel panel3 = new JPanel(new GridLayout(1, 2, 5,5));
+        JPanel panel3 = new JPanel(new GridLayout(1, 2, 5, 5));
         panel3.add(new JButton("j"));
         panel3.add(new JButton("k"));
         panel3.add(new JButton("l"));
