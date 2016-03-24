@@ -1,0 +1,26 @@
+Задание для приложения words с графическим интерфейсом пользователя
+
+Графический интерфейс может выглядить примерно так http://framebox.org/xBvS
+Два JButton, три JLabel. На первом JLabel слово на английском, на втором - на русском, на третьем - количество показов слова
+
+Для начала подготовим классы Word и Dictionary
+В класс Word добавить методы
+* public String getRussian()
+* public String getEnglish()
+* public void incrementQuantityDisplay() //увеличивает количество просмотров на 1
+
+В классе Dictionary сделать методы
+* public Word getNextWord() //возвращает следующее слово в словаре 
+                            //и увеличивает количество показов этого слова через метод incrementQuantityDisplay
+* public Word getPrevWord()
+
+Сделать класс NextListener реализующий интерфейс ActionListener
+который будет повешен на обработку нажатия на кнопку "next".
+Сам метод actionPerformed должен использовать методы getNextWord, getRussian, getEnglish, getQuantityDisplay
+Т.к. метод getNextWord реализован в классе Dictionary, то в классе NextListener можно объявить ссылку на объект класса Dictionary в private поле. И соответственно сделать конструктор 
+public NextListener(Dictionary dictionary)
+
+Аналогично создать класс PrevListener
+
+В классе AppGui кнопку "next" дать имя buttonNext, кнопке "prev" -- buttonPrev.
+На buttonNext навесить NextListener, на buttonPrev навесить PrevListener.
