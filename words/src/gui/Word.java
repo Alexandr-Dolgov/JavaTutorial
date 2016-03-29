@@ -6,7 +6,6 @@ public class Word {
     private String english;
     boolean onRussian;
     private int quantityDisplay = 0;
-    private int incrementQuantityDisplay = 0;
 
     public Word(String rus, String eng, boolean onRus) {
         russian = rus;
@@ -41,10 +40,10 @@ public class Word {
     }
 
     public void incrementQuantityDisplay() {
-        incrementQuantityDisplay++;
+        quantityDisplay++;
     }
 
     public int getIncrementQuantityDisplay() {
-        return incrementQuantityDisplay;
+        return quantityDisplay;
     }
 }
