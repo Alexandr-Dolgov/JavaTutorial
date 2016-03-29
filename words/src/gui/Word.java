@@ -42,8 +42,4 @@ public class Word {
     public void incrementQuantityDisplay() {
         quantityDisplay++;
     }
-
-    public int getIncrementQuantityDisplay() {
-        return quantityDisplay;
-    }
 }
