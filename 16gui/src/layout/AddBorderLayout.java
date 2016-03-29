@@ -21,12 +21,12 @@ public class AddBorderLayout {
         JPanel panel3 = new JPanel(new BorderLayout());
         panel1.add(new TextField(20));
 
-        JPanel mainPanel = new JPanel();
-        mainPanel.add(panel1);
+        JPanel mainPanel = new JPanel(new BorderLayout());
+        mainPanel.add("North", panel1);
         mainPanel.add(label1);
         mainPanel.add(textField);
-        mainPanel.add(panel2);
-        mainPanel.add(panel3);
+        mainPanel.add("West", panel2);
+        mainPanel.add("Center", panel3);
 
         frame.add(mainPanel);
 

@@ -23,3 +23,5 @@ System.arraycopy, System.currentTimeMillis, Arrays.copyOf, Arrays.copyOfRange
 статистика: сколько всего было показано слов
 
 самое часто показываемое слово
+
+

@@ -4,26 +4,38 @@ import java.util.Random;
 
 
 public class Dictionary {
-    private Word[] words;//объявление переменной, ссылка на массив содержащая тип массива
+    private Word[] words;
     private int index;
 
     public Dictionary(boolean onRussian) {
-        words = new Word[]{//определение и динамическая групповая инициализация, words ссылка на массив
+        words = new Word[]{
                 new Word("мир", "world", onRussian),
                 new Word("привет", "hello", onRussian),
                 new Word("кто", "who", onRussian),
                 new Word("что", "what", onRussian),
                 new Word("мед", "honey", onRussian)};
-
     }
 
     public Word getFirst() {
         return words[0];
     }
 
+    public Word getNextWord() {
+        index = (index == words.length - 1) ? 0 : index + 1;
+        words[index].incrementQuantityDisplay();
+        return words[index];
+    }
+
+    public Word getPrewWord() {
+        index = (index == words.length - 1) ? 0 : index - 1;
+        words[index].incrementQuantityDisplay();
+        return words[index];
+    }
+
+
     public void addWord(String rus, String eng, boolean onRus) {
-        Word[] newWords = new Word[words.length+1];
-        for (int i = 0; i <words.length ; i++) {
+        Word[] newWords = new Word[words.length + 1];
+        for (int i = 0; i < words.length; i++) {
             newWords[i] = words[i];
         }
         Word newWord = new Word(rus, eng, onRus);
@@ -89,4 +101,6 @@ public class Dictionary {
             words[i].println();
         }
     }
+
+
 }

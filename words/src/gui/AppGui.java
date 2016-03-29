@@ -6,7 +6,9 @@ import java.awt.*;
 public class AppGui {
 
     public static void main(String[] args) {
+
         Dictionary words = new Dictionary(false);
+
 
         JFrame frame = new JFrame();
         frame.setTitle("words");
@@ -15,15 +17,22 @@ public class AppGui {
 
         JPanel panel1 = new JPanel(new FlowLayout());
 
-        JButton buttonA = new JButton("prev");
+        NextListener myNextListener = new NextListener();
 
-        JButton buttonB = new JButton("next");
+        JButton buttonNext = new JButton("next");
+        buttonNext.addActionListener(myNextListener);
 
-        JLabel label = new JLabel(words.getFirst().toString());
+        JButton buttonPrev = new JButton("prev");
 
-        panel1.add(buttonA);
-        panel1.add(label);
-        panel1.add(buttonB);
+        JLabel label1 = new JLabel(words.getFirst().toString());
+        JLabel label2 = new JLabel(words.getNextWord().toString());
+        JLabel label3 = new JLabel();
+
+        panel1.add(buttonPrev);
+        panel1.add(label1);
+        panel1.add(label2);
+        panel1.add(label3);
+        panel1.add(buttonNext);
 
         frame.add(panel1);
 
