@@ -9,32 +9,35 @@ public class AppGui {
 
         Dictionary words = new Dictionary(false);
 
-
         JFrame frame = new JFrame();
         frame.setTitle("words");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(400, 100);
 
-        JPanel panel1 = new JPanel(new FlowLayout());
-
-        NextListener myNextListener = new NextListener();
+        JPanel mainPanel = new JPanel(new FlowLayout());
 
         JButton buttonNext = new JButton("next");
-        buttonNext.addActionListener(myNextListener);
-
         JButton buttonPrev = new JButton("prev");
 
-        JLabel label1 = new JLabel(words.getFirst().toString());
-        JLabel label2 = new JLabel(words.getNextWord().toString());
-        JLabel label3 = new JLabel();
+        Word firstWord = words.getFirst();
+        firstWord.incrementQuantityDisplay();
+        JLabel label1 = new JLabel(firstWord.getEnglish());
+        JLabel label2 = new JLabel(firstWord.getRussian());
+        JLabel label3 = new JLabel("" + firstWord.getQuantityDisplay());
 
-        panel1.add(buttonPrev);
-        panel1.add(label1);
-        panel1.add(label2);
-        panel1.add(label3);
-        panel1.add(buttonNext);
+        NextListener myNextListener = new NextListener(words, label1, label2, label3);
+        buttonNext.addActionListener(myNextListener);
 
-        frame.add(panel1);
+        JPanel labelsPanel = new JPanel(new GridLayout(3, 1));
+        labelsPanel.add(label1);
+        labelsPanel.add(label2);
+        labelsPanel.add(label3);
+
+        mainPanel.add(buttonPrev);
+        mainPanel.add(labelsPanel);
+        mainPanel.add(buttonNext);
+
+        frame.add(mainPanel);
 
         frame.setVisible(true);
     }

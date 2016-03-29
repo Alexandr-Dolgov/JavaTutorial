@@ -26,7 +26,7 @@ public class Dictionary {
         return words[index];
     }
 
-    public Word getPrewWord() {
+    public Word getPrevWord() {
         index = (index == words.length - 1) ? 0 : index - 1;
         words[index].incrementQuantityDisplay();
         return words[index];
