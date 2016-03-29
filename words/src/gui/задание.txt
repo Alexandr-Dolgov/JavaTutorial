@@ -25,7 +25,25 @@
 И соответственно сделать конструктор
 public NextListener(Dictionary dictionary)
 
-Аналогично создать класс PrevListener
-
 В классе AppGui кнопку "next" дать имя buttonNext, кнопке "prev" -- buttonPrev.
-На buttonNext навесить NextListener, на buttonPrev навесить PrevListener.
+На buttonNext навесить NextListener
+
+----------------------------- 2016.03.29
+
+Аналогично создать класс PrevListener
+На buttonPrev навесить PrevListener.
+
+Переписать метод String toString() в классе Word чтобы он возвращал удобочитаемое представление всех полей
+т.е. для объекта с полями
+String russian = "привет";
+String english = "hello";
+boolean onRussian = "true";
+int quantityDisplay = 11;
+метод toString() должно вернуть таку строку
+"привет, hello, rus, 11"
+
+Реализовать метод String toString() в классе Dictionary
+"2 [привет, hello, eng, 11], [пока, goodbye, eng, 3]"
+
+На графический интерфес внизу добавить кнопку random
+по нажатию на которую будет показано случайное слов из словаря
