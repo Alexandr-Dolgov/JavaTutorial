@@ -29,6 +29,8 @@ public NextListener(Dictionary dictionary)
 На buttonNext навесить NextListener
 
 ----------------------------- 2016.03.29
+В words/src/gui/AppGui.java и в words/src/gui/NextListener.java
+Переименовать label1,2,3 на LabelEng,  labelRus, LabelQuantity
 
 Аналогично создать класс PrevListener
 На buttonPrev навесить PrevListener.
