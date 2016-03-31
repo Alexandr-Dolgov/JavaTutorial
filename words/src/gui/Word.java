@@ -28,7 +28,8 @@ public class Word {
 
     @Override
     public String toString() {
-        return (onRussian) ? russian : english + " " + quantityDisplay;
+        return russian + " " + english + " " +  quantityDisplay;
+//        return (onRussian) ? russian : english + " " + quantityDisplay;
     }
 
     public String getRussian() {

@@ -32,6 +32,12 @@ public class Dictionary {
         return words[index];
     }
 
+    @Override
+    public String toString(){
+//        "index: 0, 0: [мир, world, eng, 2], 1: [привет, hello, rus, 0]"
+        return "index: " + index + words[index];
+    }
+
 
     public void addWord(String rus, String eng, boolean onRus) {
         Word[] newWords = new Word[words.length + 1];
