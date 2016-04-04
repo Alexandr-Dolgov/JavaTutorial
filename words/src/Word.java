@@ -6,9 +6,7 @@ public class Word {
     boolean onRussian;
     private int quantityDisplay = 0;
 
-    public Word(String rus, String eng, boolean onRus) {//конструктор вызывается только один раз при зоздании класса
-        // называется так же как класс и ничего не возвращает
-        //задает начальное значение атрибута english
+    public Word(String rus, String eng, boolean onRus) {
         russian = rus;
         english = eng;
         onRussian = onRus;
@@ -26,10 +24,6 @@ public class Word {
 
     public void println() {
         System.out.println((onRussian) ? russian : english + " " + quantityDisplay);
-        //if (onRussian) {
-//            System.out.println(english + " " + quantityDisplay);
-        //}
-//        else System.out.println(russian + " " + quantityDisplay);
 
     }
 }

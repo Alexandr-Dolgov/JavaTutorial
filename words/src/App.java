@@ -1,10 +1,4 @@
 import java.util.Scanner;
-//перейти на switch
-//класс Dictionary инкапсулирующий работу с массивом
-//добавить показ случайного (random)
-//добавить показ случайного среди тех, у кого количество показов наименьшее
-//добавление слова через пользовательский интерфейс
-
 
 public class App {
     public static void main(String[] args) {
@@ -44,7 +38,7 @@ public class App {
                     instruction();
                     break;
             }
-            input = scanner.next();//используем через объект
+            input = scanner.next();
         }
         System.out.println("программа завершена, вот результат:");
         words.print();

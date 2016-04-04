@@ -3,11 +3,11 @@ import java.util.Random;
 
 
 public class Dictionary {
-    private Word[] words;//объявление переменной, ссылка на массив содержащая тип массива
+    private Word[] words;
     private int index;
 
     public Dictionary(boolean onRussian) {
-        words = new Word[]{//определение и динамическая групповая инициализация, words ссылка на массив
+        words = new Word[]{
                 new Word("мир", "world", onRussian),
                 new Word("привет", "hello", onRussian),
                 new Word("кто", "who", onRussian),

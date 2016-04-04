@@ -27,15 +27,15 @@ public class Dictionary {
     }
 
     public Word getPrevWord() {
-        index = (index == words.length - 1) ? 0 : index - 1;
+        index = (index == 0) ? words.length - 1 : index - 1;
         words[index].incrementQuantityDisplay();
         return words[index];
     }
 
     @Override
     public String toString(){
-//        "index: 0, 0: [мир, world, eng, 2], 1: [привет, hello, rus, 0]"
-        return "index: " + index + words[index];
+//        "2 [привет, hello, eng, 11], [пока, goodbye, eng, 3]"
+        return "[" + words[index] + "] , [" + words[index +1] + "]";
     }
 
 
