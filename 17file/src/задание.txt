@@ -1,0 +1,10 @@
+В модуле words
+В классе Dictionary
+создать метод
+
+public Dictionary readFromFile(String pathFile)
+
+возвращает новый обеъкт считанный из файла
+
+путь и имя файла задаются в pathFile
+
