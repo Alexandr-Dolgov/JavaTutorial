@@ -1,6 +1,10 @@
 package gui;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.util.Random;
+import java.io.File;
+import java.io.FileReader;
 
 
 public class Dictionary {
@@ -14,6 +18,10 @@ public class Dictionary {
                 new Word("кто", "who", onRussian),
                 new Word("что", "what", onRussian),
                 new Word("мед", "honey", onRussian)};
+    }
+
+    private Dictionary(){
+        words = new Word[0];
     }
 
     public Word getFirst() {
@@ -32,11 +40,61 @@ public class Dictionary {
         return words[index];
     }
 
+    public Word getRandomWord(){
+        Random random = new Random();
+        int randomIndex = random.nextInt(words.length);
+        return words[randomIndex];
+    }
+
     @Override
     public String toString(){
 //        "2 [привет, hello, eng, 11], [пока, goodbye, eng, 3]"
-        return "[" + words[index] + "] , [" + words[index +1] + "]";
+        String s = "";
+        for (int i = 0; i < words.length; i++) {
+            s =  s + "["+ words[i] + "]";
+
+        }
+        return "" + words.length + " " +  s;
     }
+
+    public static Dictionary readFromFile(String pathName) throws Exception {
+
+        Dictionary dictionary = new Dictionary();
+
+        File f1 = new File(pathName);
+
+        FileReader fr = new FileReader(f1);
+
+        String rus = null;
+        String eng = null;
+
+        String s = "";
+        int c = fr.read();
+        int i = 0;
+        int commaIndex = 0;
+
+        while (c!= -1){
+            char ch = (char) c;
+            if (ch == ','){
+                commaIndex = i;
+            }
+            if (ch == '\r'){
+                rus = s.substring(0, commaIndex);
+                eng = s.substring(commaIndex + 1, i);
+                s="";
+                dictionary.addWord(rus, eng, true);
+            }
+            s=s + ch;
+            c=fr.read();
+            i++;
+        }
+        System.out.println("\ntest");
+//        Word word1 = new Word();
+
+
+        return dictionary;
+    }
+
 
 
     public void addWord(String rus, String eng, boolean onRus) {
@@ -109,4 +167,22 @@ public class Dictionary {
     }
 
 
+    public static class RandomListener {
+
+        private Dictionary dictionary;
+        private JLabel lableRus;
+        private JLabel labelEng;
+        private JLabel labelQuantity;
+
+        public RandomListener(Dictionary dictionary, JLabel l1, JLabel l2, JLabel l3){
+            this.dictionary = dictionary;
+            lableRus = l1;
+            labelEng = l2;
+            labelQuantity = l3;
+        }
+
+        public void actionPerformed(ActionEvent e){
+    //        Word randomWord = dictionary.g
+        }
+    }
 }

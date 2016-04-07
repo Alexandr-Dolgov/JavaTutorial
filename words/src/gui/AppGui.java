@@ -5,16 +5,19 @@ import java.awt.*;
 
 public class AppGui {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         Dictionary words = new Dictionary(false);
+
+        //тестовый код, удалить после проверки
+        //Dictionary words = Dictionary.readFromFile("Dictionary.txt");
 
         JFrame frame = new JFrame();
         frame.setTitle("words");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setSize(400, 100);
+        frame.setSize(400, 150);
 
-        JPanel mainPanel = new JPanel(new FlowLayout());
+        JPanel centerPanel = new JPanel(new FlowLayout());
 
         JButton buttonNext = new JButton("next");
         JButton buttonPrev = new JButton("prev");
@@ -32,15 +35,24 @@ public class AppGui {
         PrevListener myPrevListener = new PrevListener(words, labelRus, labelEng, labelQuantity);
         buttonPrev.addActionListener(myPrevListener);
 
+        RandomListener myRandomListener = new RandomListener(words, labelRus, labelEng, labelQuantity);
+        buttonRandom.addActionListener(myRandomListener);
+
         JPanel labelsPanel = new JPanel(new GridLayout(3, 1));
         labelsPanel.add(labelRus);
         labelsPanel.add(labelEng);
         labelsPanel.add(labelQuantity);
 
-        mainPanel.add(buttonPrev);
-        mainPanel.add(labelsPanel);
-        mainPanel.add(buttonNext);
-        mainPanel.add(buttonRandom);
+        centerPanel.add(buttonPrev);
+        centerPanel.add(labelsPanel);
+        centerPanel.add(buttonNext);
+
+        JPanel bottomPanel = new JPanel(new FlowLayout());
+        bottomPanel.add(buttonRandom);
+
+        JPanel mainPanel = new JPanel(new BorderLayout());
+        mainPanel.add(centerPanel, BorderLayout.CENTER);
+        mainPanel.add(bottomPanel, BorderLayout.SOUTH);
 
         frame.add(mainPanel);
 
