@@ -20,7 +20,7 @@ public class Dictionary {
                 new Word("мед", "honey", onRussian)};
     }
 
-    private Dictionary(){
+    private Dictionary() {
         words = new Word[0];
     }
 
@@ -40,33 +40,33 @@ public class Dictionary {
         return words[index];
     }
 
-    public Word getRandomWord(){
+    public Word getRandomWord() {
         Random random = new Random();
         int randomIndex = random.nextInt(words.length);
         words[randomIndex].incrementQuantityDisplay();
         return words[randomIndex];
     }
 
-    public void deleteWord(int index){
+    public void deleteWord(int index) {
         Word[] deleteWords = new Word[words.length - 1];
         for (int i = 0; i < words.length; i++) {
-            if (i < index){
+            if (i < index) {
                 deleteWords[i] = words[i];
-            } else if (i > index){
+            } else if (i > index) {
                 deleteWords[i] = words[i - 1];
             }
         }
     }
 
     @Override
-    public String toString(){
+    public String toString() {
 //        "2 [привет, hello, eng, 11], [пока, goodbye, eng, 3]"
         String s = "";
         for (int i = 0; i < words.length; i++) {
-            s =  s + "["+ words[i] + "]";
+            s = s + "[" + words[i] + "]";
 
         }
-        return "" + words.length + " " +  s;
+        return "" + words.length + " " + s;
     }
 
     public static Dictionary readFromFile(String pathName) throws Exception {
@@ -85,19 +85,19 @@ public class Dictionary {
         int i = 0;
         int commaIndex = 0;
 
-        while (c!= -1){
+        while (c != -1) {
             char ch = (char) c;
-            if (ch == ','){
+            if (ch == ',') {
                 commaIndex = i;
             }
-            if (ch == '\r'){
+            if (ch == '\r') {
                 rus = s.substring(0, commaIndex);
                 eng = s.substring(commaIndex + 1, i);
-                s="";
+                s = "";
                 dictionary.addWord(rus, eng, true);
             }
-            s=s + ch;
-            c=fr.read();
+            s = s + ch;
+            c = fr.read();
             i++;
         }
         System.out.println("\ntest");
@@ -106,7 +106,6 @@ public class Dictionary {
 
         return dictionary;
     }
-
 
 
     public void addWord(String rus, String eng, boolean onRus) {
@@ -186,15 +185,15 @@ public class Dictionary {
         private JLabel labelEng;
         private JLabel labelQuantity;
 
-        public RandomListener(Dictionary dictionary, JLabel l1, JLabel l2, JLabel l3){
+        public RandomListener(Dictionary dictionary, JLabel l1, JLabel l2, JLabel l3) {
             this.dictionary = dictionary;
             lableRus = l1;
             labelEng = l2;
             labelQuantity = l3;
         }
 
-        public void actionPerformed(ActionEvent e){
-    //        Word randomWord = dictionary.g
+        public void actionPerformed(ActionEvent e) {
+            //        Word randomWord = dictionary.g
         }
     }
 }
