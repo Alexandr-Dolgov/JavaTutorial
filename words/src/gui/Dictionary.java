@@ -47,6 +47,17 @@ public class Dictionary {
         return words[randomIndex];
     }
 
+    public void deleteWord(int index){
+        Word[] deleteWords = new Word[words.length - 1];
+        for (int i = 0; i < words.length; i++) {
+            if (i < index){
+                deleteWords[i] = words[i];
+            } else if (i > index){
+                deleteWords[i] = words[i - 1];
+            }
+        }
+    }
+
     @Override
     public String toString(){
 //        "2 [привет, hello, eng, 11], [пока, goodbye, eng, 3]"
