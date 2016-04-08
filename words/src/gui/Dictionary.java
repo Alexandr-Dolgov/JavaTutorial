@@ -43,6 +43,7 @@ public class Dictionary {
     public Word getRandomWord(){
         Random random = new Random();
         int randomIndex = random.nextInt(words.length);
+        words[randomIndex].incrementQuantityDisplay();
         return words[randomIndex];
     }
 
