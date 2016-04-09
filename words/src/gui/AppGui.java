@@ -8,6 +8,8 @@ public class AppGui {
     public static void main(String[] args) throws Exception {
 
         Dictionary words = new Dictionary(false);
+        words.deleteWord(4);
+
 
         //тестовый код, удалить после проверки
         //Dictionary words = Dictionary.readFromFile("Dictionary.txt");
