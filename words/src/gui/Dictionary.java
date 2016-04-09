@@ -63,8 +63,7 @@ public class Dictionary {
 //        "2 [привет, hello, eng, 11], [пока, goodbye, eng, 3]"
         String s = "";
         for (int i = 0; i < words.length; i++) {
-            s = s + "[" + words[i] + "]";
-
+            s = s + ", [" + words[i] + "]";
         }
         return "" + words.length + " " + s;
     }
@@ -177,23 +176,4 @@ public class Dictionary {
         }
     }
 
-
-    public static class RandomListener {
-
-        private Dictionary dictionary;
-        private JLabel lableRus;
-        private JLabel labelEng;
-        private JLabel labelQuantity;
-
-        public RandomListener(Dictionary dictionary, JLabel l1, JLabel l2, JLabel l3) {
-            this.dictionary = dictionary;
-            lableRus = l1;
-            labelEng = l2;
-            labelQuantity = l3;
-        }
-
-        public void actionPerformed(ActionEvent e) {
-            //        Word randomWord = dictionary.g
-        }
-    }
 }
