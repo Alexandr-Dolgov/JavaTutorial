@@ -58,6 +58,7 @@ public class Dictionary {
                 deleteWords[i-1] = words[i];
             }
         }
+        words = deleteWords;
     }
     @Override
     public String toString() {

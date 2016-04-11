@@ -12,7 +12,8 @@ public class AppGui {
 
 
         //тестовый код, удалить после проверки
-        //Dictionary words = Dictionary.readFromFile("Dictionary.txt");
+//        Dictionary words = Dictionary.readFromFile("Dictionary.txt");
+        Dictionary dic = Dictionary.readFromFile("Dictionary.txt");
 
         JFrame frame = new JFrame();
         frame.setTitle("words");
