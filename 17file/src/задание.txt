@@ -2,7 +2,7 @@
 В классе Dictionary
 создать метод
 
-public Dictionary readFromFile(String pathFile)
+public static Dictionary readFromFile(String pathFile)
 
 возвращает новый обеъкт считанный из файла
 
