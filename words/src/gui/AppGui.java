@@ -37,7 +37,7 @@ public class AppGui {
         }
 
         Dictionary words = new Dictionary(false);
-        words.deleteWord(4);
+        //words.deleteWord(4);
 
 
         //тестовый код, удалить после проверки
@@ -71,8 +71,8 @@ public class AppGui {
         RandomListener myRandomListener = new RandomListener(words, labelRus, labelEng, labelQuantity);
         buttonRandom.addActionListener(myRandomListener);
 
-        DeleteWord myDeleteWord = new DeleteWord(words, labelEng, labelEng, labelQuantity);
-        buttonDeleteWord.addActionListener(myDeleteWord);
+        DeleteWordListener myDeleteWordListener = new DeleteWordListener(words, labelEng, labelEng, labelQuantity);
+        buttonDeleteWord.addActionListener(myDeleteWordListener);
 
 
 
