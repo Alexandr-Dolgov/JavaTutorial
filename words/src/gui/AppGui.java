@@ -2,18 +2,47 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class AppGui {
 
     public static void main(String[] args) throws Exception {
+
+        File f = new File("dictionary.txt");
+        FileReader fr = null;
+        BufferedReader br = null;
+        try {
+            fr = new FileReader(f);
+            br = new BufferedReader(fr);
+            String s = br.readLine();
+            System.out.println(s);
+
+
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally {
+            try {
+                if (br != null){
+                    br.close();
+                }
+                if (fr != null)
+                    fr.close();
+            } catch (IOException ignore){
+
+            }
+        }
 
         Dictionary words = new Dictionary(false);
         words.deleteWord(4);
 
 
         //тестовый код, удалить после проверки
-//        Dictionary words = Dictionary.readFromFile("Dictionary.txt");
-//        Dictionary dic = Dictionary.readFromFile("Dictionary.txt");
+//        Dictionary words = Dictionary.readFromFile("dictionary.txt");
+//        Dictionary dic = Dictionary.readFromFile("dictionary.txt");
 
         JFrame frame = new JFrame();
         frame.setTitle("words");
