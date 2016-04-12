@@ -13,7 +13,7 @@ public class AppGui {
 
         //тестовый код, удалить после проверки
 //        Dictionary words = Dictionary.readFromFile("Dictionary.txt");
-        Dictionary dic = Dictionary.readFromFile("Dictionary.txt");
+//        Dictionary dic = Dictionary.readFromFile("Dictionary.txt");
 
         JFrame frame = new JFrame();
         frame.setTitle("words");
@@ -25,6 +25,7 @@ public class AppGui {
         JButton buttonNext = new JButton("next");
         JButton buttonPrev = new JButton("prev");
         JButton buttonRandom = new JButton("random");
+        JButton buttonDeleteWord = new JButton("delete");
 
         Word firstWord = words.getFirst();
         firstWord.incrementQuantityDisplay();
@@ -41,6 +42,11 @@ public class AppGui {
         RandomListener myRandomListener = new RandomListener(words, labelRus, labelEng, labelQuantity);
         buttonRandom.addActionListener(myRandomListener);
 
+        DeleteWord myDeleteWord = new DeleteWord(words, labelEng, labelEng, labelQuantity);
+        buttonDeleteWord.addActionListener(myDeleteWord);
+
+
+
         JPanel labelsPanel = new JPanel(new GridLayout(3, 1));
         labelsPanel.add(labelRus);
         labelsPanel.add(labelEng);
@@ -52,6 +58,9 @@ public class AppGui {
 
         JPanel bottomPanel = new JPanel(new FlowLayout());
         bottomPanel.add(buttonRandom);
+        bottomPanel.add(buttonDeleteWord);
+
+
 
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.add(centerPanel, BorderLayout.CENTER);
