@@ -2,9 +2,11 @@ package gui;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.util.Random;
 import java.io.File;
 import java.io.FileReader;
+import java.util.Scanner;
 
 
 public class Dictionary {
@@ -105,6 +107,20 @@ public class Dictionary {
 //        Word word1 = new Word();
 
 
+        return dictionary;
+    }
+
+    public static Dictionary smartReadFromFile(String pathName) {
+        Dictionary dictionary = new Dictionary();
+        try (Scanner scanner = new Scanner(new FileReader(pathName))) {
+            while (scanner.hasNext()) {
+                String rus = scanner.next();
+                String eng = scanner.next();
+                dictionary.addWord(rus, eng, false);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return dictionary;
     }
 

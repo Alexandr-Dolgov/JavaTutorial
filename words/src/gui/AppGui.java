@@ -11,33 +11,11 @@ public class AppGui {
 
     public static void main(String[] args) throws Exception {
 
-        File f = new File("dictionary.txt");
-        FileReader fr = null;
-        BufferedReader br = null;
-        try {
-            fr = new FileReader(f);
-            br = new BufferedReader(fr);
-            String s = br.readLine();
-            System.out.println(s);
-
-
-
-        }catch (IOException e){
-            e.printStackTrace();
-        }finally {
-            try {
-                if (br != null){
-                    br.close();
-                }
-                if (fr != null)
-                    fr.close();
-            } catch (IOException ignore){
-
-            }
-        }
 
         Dictionary words = new Dictionary(false);
         //words.deleteWord(4);
+
+        Dictionary d = Dictionary.smartReadFromFile("dic");
 
 
         //тестовый код, удалить после проверки
