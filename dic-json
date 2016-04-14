@@ -1,0 +1,17 @@
+{
+"index": 3,
+"words": [
+    {
+        "engWord": "world",
+        "rusWord": "мир",
+        "quantityDisplay": 4,
+        "onRussian": true
+    },
+    {
+        "engWord": "hello",
+        "rusWord": "привет",
+        "quantityDisplay": 2,
+        "onRussian": true
+    }
+]
+}
