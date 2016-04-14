@@ -1,5 +1,5 @@
-мир,world,onRussian
-привет,hello,onRussian
-кто,who,onRussian
+добавить,ddition,onRussian,
+строить,build,onRussian,
+кто,who,onRussian,
 "что", "what", onRussian),
 "мед", "honey", onRussian)

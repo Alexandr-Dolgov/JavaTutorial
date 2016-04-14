@@ -12,8 +12,8 @@ public class AppReadChar {
         }
         */
 
-        File f1 = new File("C:\\Data\\Develop\\Students\\30_KirillSokolov\\JavaTutorial\\17file\\src\\t\\t.txt");
-        File f2 = new File("tmp.txt");
+        //File f1 = new File("C:\\Data\\Develop\\Students\\30_KirillSokolov\\JavaTutorial\\17file\\src\\t\\t.txt");
+        File f1 = new File("dic");
 
         // io = input output
 

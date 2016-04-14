@@ -1,13 +1,10 @@
 package gui;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.Random;
 import java.io.File;
 import java.io.FileReader;
 import java.util.Scanner;
-
 
 public class Dictionary {
 
@@ -52,19 +49,19 @@ public class Dictionary {
 
 
     public void deleteWord(int index) {
-        Word[] deleteWords = new Word[words.length-1];
+        Word[] deleteWords = new Word[words.length - 1];
         for (int i = 0; i < words.length; i++) {
             if (i < index) {
                 deleteWords[i] = words[i];
             } else if (i > index) {
-                deleteWords[i-1] = words[i];
+                deleteWords[i - 1] = words[i];
             }
         }
         words = deleteWords;
     }
+
     @Override
     public String toString() {
-//        "2 [привет, hello, eng, 11], [пока, goodbye, eng, 3]"
         String s = "";
         for (int i = 0; i < words.length; i++) {
             s = s + ", [" + words[i] + "]";
@@ -79,6 +76,7 @@ public class Dictionary {
         File f1 = new File(pathName);
 
         FileReader fr = new FileReader(f1);
+
 
         String rus = null;
         String eng = null;
