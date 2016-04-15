@@ -25,7 +25,7 @@ public class AppGui {
         JFrame frame = new JFrame();
         frame.setTitle("words");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setSize(400, 150);
+        frame.setSize(400, 200);
 
         JPanel centerPanel = new JPanel(new FlowLayout());
 
@@ -33,6 +33,9 @@ public class AppGui {
         JButton buttonPrev = new JButton("prev");
         JButton buttonRandom = new JButton("random");
         JButton buttonDeleteWord = new JButton("delete");
+        JButton buttonFirst = new JButton("first");
+        JButton buttonLast = new JButton("last");
+        JButton buttonChangeDictionary = new JButton("ChangeDictionary");
 
         Word firstWord = words.getFirst();
         firstWord.incrementQuantityDisplay();
@@ -49,10 +52,14 @@ public class AppGui {
         RandomListener myRandomListener = new RandomListener(words, labelRus, labelEng, labelQuantity);
         buttonRandom.addActionListener(myRandomListener);
 
-        DeleteWordListener myDeleteWordListener = new DeleteWordListener(words, labelEng, labelEng, labelQuantity);
+        DeleteWordListener myDeleteWordListener = new DeleteWordListener(words, labelEng, labelRus, labelQuantity);
         buttonDeleteWord.addActionListener(myDeleteWordListener);
 
+        FirstListener myFirstListener = new FirstListener(words, labelEng, labelRus, labelQuantity);
+        buttonFirst.addActionListener(myFirstListener);
 
+        LastListener myLastListener = new LastListener(words, labelEng, labelRus, labelQuantity);
+        buttonLast.addActionListener(myLastListener);
 
         JPanel labelsPanel = new JPanel(new GridLayout(3, 1));
         labelsPanel.add(labelRus);
@@ -64,14 +71,18 @@ public class AppGui {
         centerPanel.add(buttonNext);
 
         JPanel bottomPanel = new JPanel(new FlowLayout());
+        bottomPanel.add(buttonChangeDictionary);
         bottomPanel.add(buttonRandom);
-        bottomPanel.add(buttonDeleteWord);
 
-
+        JPanel bottomPanel1 = new JPanel();
+        bottomPanel1.add(buttonFirst);
+        bottomPanel1.add(buttonLast);
 
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.add(centerPanel, BorderLayout.CENTER);
         mainPanel.add(bottomPanel, BorderLayout.SOUTH);
+        mainPanel.add(bottomPanel1, BorderLayout.NORTH);
+
 
         frame.add(mainPanel);
 

@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.Scanner;
 
+
 public class Dictionary {
 
     private Word[] words;
@@ -27,6 +28,7 @@ public class Dictionary {
     public Word getFirst() {
         return words[0];
     }
+    public Word getLast() { return words[words.length-1]; }
 
     public Word getNextWord() {
         index = (index == words.length - 1) ? 0 : index + 1;
