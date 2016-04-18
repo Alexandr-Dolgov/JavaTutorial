@@ -11,10 +11,11 @@ public class LoadDictionaryListener implements ActionListener {
 
         JFrame frame = new JFrame();
 
-        frame.setTitle("chande dictionary");
+        frame.setTitle("load dictionary");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(400, 200);
         frame.setVisible(true);
+
 
         File file = new File("C:\\Users\\AK\\IdeaProjects\\JavaTutorial\\words\\src\\gui\\dictionary.txt");
 

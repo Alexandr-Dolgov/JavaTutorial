@@ -7,11 +7,20 @@ import java.awt.event.ActionListener;
 
 public class ChangeDictionaryListener implements ActionListener {
 
+    public JFrame frame;//описываем поле у ChangeDictionaryListener есть поле frame
+
+    public ChangeDictionaryListener(JFrame frame){//должна при. ссылка на объект типа JFrame
+        this.frame = frame;//
+    }
+
 //    boolean b = true;
 //    public  ChangeDictionaryListener(boolean i){
 //        this.i = i;
 //    }
     public void actionPerformed(ActionEvent e) {
+        AppGui.b = true;
+        frame.setVisible(true);
+
 
         JFrame frame = new JFrame();
 

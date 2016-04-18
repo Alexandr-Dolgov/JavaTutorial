@@ -9,10 +9,11 @@ import java.io.IOException;
 
 public class AppGui {
 
+    static boolean b;
 //
 
     public static void main(String[] args) throws Exception {
-        boolean b = false;
+//        boolean b = false;
         Dictionary words = new Dictionary(false);
         //words.deleteWord(4);
 
@@ -63,7 +64,7 @@ public class AppGui {
         LastListener myLastListener = new LastListener(words, labelEng, labelRus, labelQuantity);
         buttonLast.addActionListener(myLastListener);
 
-        ChangeDictionaryListener myChangeDictionaryListener = new ChangeDictionaryListener();
+        ChangeDictionaryListener myChangeDictionaryListener = new ChangeDictionaryListener(frameChangeDictionary);
         buttonChangeDictionary.addActionListener(myChangeDictionaryListener);
 
         JPanel labelsPanel = new JPanel(new GridLayout(3, 1));
@@ -92,6 +93,6 @@ public class AppGui {
         frameChangeDictionary.add(panelChangeDictionari);
 
         frame.setVisible(true);
-        frameChangeDictionary.setVisible(false);
+        frameChangeDictionary.setVisible(b);
     }
 }
