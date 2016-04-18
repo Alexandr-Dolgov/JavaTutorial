@@ -9,11 +9,9 @@ import java.io.IOException;
 
 public class AppGui {
 
-    static boolean b;
-//
 
     public static void main(String[] args) throws Exception {
-//        boolean b = false;
+
         Dictionary words = new Dictionary(false);
         //words.deleteWord(4);
 
@@ -93,6 +91,6 @@ public class AppGui {
         frameChangeDictionary.add(panelChangeDictionari);
 
         frame.setVisible(true);
-        frameChangeDictionary.setVisible(b);
+
     }
 }

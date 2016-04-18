@@ -10,17 +10,11 @@ public class ChangeDictionaryListener implements ActionListener {
     public JFrame frame;//описываем поле у ChangeDictionaryListener есть поле frame
 
     public ChangeDictionaryListener(JFrame frame){//должна при. ссылка на объект типа JFrame
-        this.frame = frame;//
+        this.frame = frame;
     }
 
-//    boolean b = true;
-//    public  ChangeDictionaryListener(boolean i){
-//        this.i = i;
-//    }
     public void actionPerformed(ActionEvent e) {
-        AppGui.b = true;
         frame.setVisible(true);
-
 
         JFrame frame = new JFrame();
 
@@ -29,8 +23,6 @@ public class ChangeDictionaryListener implements ActionListener {
         frame.setSize(400, 200);
         frame.setVisible(true);
 
-        JPanel panel = new JPanel(new FlowLayout());
-
         JButton buttonAddWord = new JButton("add word");
         JButton buttonDeleteWord = new JButton("delete word");
         JButton buttonLoadDictionary = new JButton("load dictionary");
@@ -38,11 +30,18 @@ public class ChangeDictionaryListener implements ActionListener {
         LoadDictionaryListener LoadDictionaryListener = new LoadDictionaryListener();
         buttonLoadDictionary.addActionListener(LoadDictionaryListener);
 
-        panel.add(buttonAddWord);
-        panel.add(buttonDeleteWord);
-        panel.add(buttonLoadDictionary);
+        JPanel panelNorth = new JPanel(new FlowLayout());
+        panelNorth.add(buttonAddWord);
+        panelNorth.add(buttonDeleteWord);
 
-        frame.add(panel);
+        JPanel panelCenter = new JPanel(new FlowLayout());
+        panelCenter.add(buttonLoadDictionary);
+
+        JPanel mainPanel = new JPanel(new BorderLayout());
+        mainPanel.add(panelNorth, BorderLayout.NORTH);
+        mainPanel.add(panelCenter, BorderLayout.CENTER);
+
+        frame.add(mainPanel);
         frame.setVisible(true);
 
         System.out.println("end");

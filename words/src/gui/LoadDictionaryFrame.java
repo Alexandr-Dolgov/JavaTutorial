@@ -14,19 +14,25 @@ public class LoadDictionaryFrame extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(400, 200);
 
-        JPanel panel = new JPanel(new FlowLayout());
-        JTextField field = new JTextField(25);
+        JTextField field = new JTextField(15);
 
         JButton buttonLoad = new JButton("load");
         JButton buttonCancel = new JButton("cancel");
 
-        panel.add(field);
-        panel.add(buttonLoad);
-        panel.add(buttonCancel);
+        JPanel panelNorth = new JPanel(new FlowLayout());
+        panelNorth.add(field);
+
+        JPanel panelCentr = new JPanel(new FlowLayout());
+        panelCentr.add(buttonCancel);
+        panelCentr.add(buttonLoad);
+
+        JPanel mainPanel = new JPanel(new BorderLayout());
+        mainPanel.add(panelNorth, BorderLayout.NORTH);
+        mainPanel.add(panelCentr, BorderLayout.CENTER);
 
         //buttonLoad.addActionListener(/*new СлушательНажатияНаКнопкуЗагрузитьСловарь()*/);
 
-        add(panel);
+        add(mainPanel);
         setVisible(true);
     }
 }
