@@ -3,5 +3,35 @@
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <orderEntry type="jdk" jdkName="1.8_73x86" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/.." />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../05/src" />
+          <root url="file://$MODULE_DIR$/../06/src" />
+          <root url="file://$MODULE_DIR$/../07exception/src" />
+          <root url="file://$MODULE_DIR$/../08final/src" />
+          <root url="file://$MODULE_DIR$/../09array/src" />
+          <root url="file://$MODULE_DIR$/../10methods/src" />
+          <root url="file://$MODULE_DIR$/../11object/src" />
+          <root url="file://$MODULE_DIR$/../12defaultConstructor/src" />
+          <root url="file://$MODULE_DIR$/../13publicPrivate/src" />
+          <root url="file://$MODULE_DIR$/../14getterSetterThis/src" />
+          <root url="file://$MODULE_DIR$/../15extends/src" />
+          <root url="file://$MODULE_DIR$/../16gui/src" />
+          <root url="file://$MODULE_DIR$/../17file/src" />
+          <root url="file://$MODULE_DIR$/../18json/src" />
+          <root url="file://$MODULE_DIR$/../BruseEckel/src" />
+          <root url="file://$MODULE_DIR$/../FaynY/src" />
+          <root url="file://$MODULE_DIR$/../PT/src" />
+          <root url="file://$MODULE_DIR$/../SyerraBeyts/src" />
+          <root url="file://$MODULE_DIR$/../Unit/src" />
+          <root url="file://$MODULE_DIR$/src" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

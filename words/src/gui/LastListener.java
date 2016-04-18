@@ -4,21 +4,20 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by AK on 15.04.2016.
- */
-public class LastListener implements ActionListener{
+
+public class LastListener implements ActionListener {
     private Dictionary dictionary;
     private JLabel labelRus;
     private JLabel labelEng;
     private JLabel labelQuantity;
 
-    public LastListener(Dictionary dictionary, JLabel l1, JLabel l2, JLabel l3){
+    public LastListener(Dictionary dictionary, JLabel l1, JLabel l2, JLabel l3) {
         this.dictionary = dictionary;
         labelRus = l1;
         labelEng = l2;
         labelQuantity = l3;
     }
+
     public void actionPerformed(ActionEvent e) {
         Word lastWord = dictionary.getLast();
         labelRus.setText(lastWord.getEnglish());

@@ -25,8 +25,7 @@ public class Dictionary {
         words = new Word[0];
     }
 
-    public Word getFirst() {
-        return words[0];
+    public Word getFirst() { return words[0];
     }
     public Word getLast() { return words[words.length-1]; }
 
@@ -49,7 +48,6 @@ public class Dictionary {
         return words[randomIndex];
     }
 
-
     public void deleteWord(int index) {
         Word[] deleteWords = new Word[words.length - 1];
         for (int i = 0; i < words.length; i++) {
@@ -61,6 +59,8 @@ public class Dictionary {
         }
         words = deleteWords;
     }
+
+
 
     @Override
     public String toString() {

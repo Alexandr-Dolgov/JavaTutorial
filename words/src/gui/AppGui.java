@@ -9,14 +9,14 @@ import java.io.IOException;
 
 public class AppGui {
 
+//
+
     public static void main(String[] args) throws Exception {
-
-
+        boolean b = false;
         Dictionary words = new Dictionary(false);
         //words.deleteWord(4);
 
         Dictionary d = Dictionary.smartReadFromFile("dic");
-
 
         //тестовый код, удалить после проверки
 //        Dictionary wordsTest = Dictionary.readFromFile("words\\src\\gui\\dictionary.txt");
@@ -27,15 +27,20 @@ public class AppGui {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(400, 200);
 
+        JFrame frameChangeDictionary = new JFrame();
+        frameChangeDictionary.setTitle("change dictionary");
+        frameChangeDictionary.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frameChangeDictionary.setSize(600, 200);
+
         JPanel centerPanel = new JPanel(new FlowLayout());
+        JPanel panelChangeDictionari = new JPanel();
 
         JButton buttonNext = new JButton("next");
         JButton buttonPrev = new JButton("prev");
         JButton buttonRandom = new JButton("random");
-        JButton buttonDeleteWord = new JButton("delete");
         JButton buttonFirst = new JButton("first");
         JButton buttonLast = new JButton("last");
-        JButton buttonChangeDictionary = new JButton("ChangeDictionary");
+        JButton buttonChangeDictionary = new JButton("change Dictionary");
 
         Word firstWord = words.getFirst();
         firstWord.incrementQuantityDisplay();
@@ -52,14 +57,14 @@ public class AppGui {
         RandomListener myRandomListener = new RandomListener(words, labelRus, labelEng, labelQuantity);
         buttonRandom.addActionListener(myRandomListener);
 
-        DeleteWordListener myDeleteWordListener = new DeleteWordListener(words, labelEng, labelRus, labelQuantity);
-        buttonDeleteWord.addActionListener(myDeleteWordListener);
-
         FirstListener myFirstListener = new FirstListener(words, labelEng, labelRus, labelQuantity);
         buttonFirst.addActionListener(myFirstListener);
 
         LastListener myLastListener = new LastListener(words, labelEng, labelRus, labelQuantity);
         buttonLast.addActionListener(myLastListener);
+
+        ChangeDictionaryListener myChangeDictionaryListener = new ChangeDictionaryListener();
+        buttonChangeDictionary.addActionListener(myChangeDictionaryListener);
 
         JPanel labelsPanel = new JPanel(new GridLayout(3, 1));
         labelsPanel.add(labelRus);
@@ -83,10 +88,10 @@ public class AppGui {
         mainPanel.add(bottomPanel, BorderLayout.SOUTH);
         mainPanel.add(bottomPanel1, BorderLayout.NORTH);
 
-
         frame.add(mainPanel);
+        frameChangeDictionary.add(panelChangeDictionari);
 
         frame.setVisible(true);
+        frameChangeDictionary.setVisible(false);
     }
-
 }
