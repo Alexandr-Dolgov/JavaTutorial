@@ -33,7 +33,5 @@ public class ChangeDictionaryFrame extends JFrame {
 
         add(mainPanel);
         setVisible(true);
-
-        System.out.println("end chande dictionary");
     }
 }

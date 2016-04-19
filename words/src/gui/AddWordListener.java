@@ -4,9 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by AK on 17.04.2016.
- */
+
 public class AddWordListener implements ActionListener {
     private Dictionary dictionary;
     private JLabel labelEng;
@@ -21,6 +19,7 @@ public class AddWordListener implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e){
+        new AppGuiFrame();
 
     }
 }
