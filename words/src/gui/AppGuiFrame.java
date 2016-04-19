@@ -10,10 +10,10 @@ public class AppGuiFrame extends JFrame{
 
         super();
 
-        Dictionary words = new Dictionary(false);
+//        Dictionary words = new Dictionary(false);
         //words.deleteWord(4);
 
-        Dictionary d = Dictionary.smartReadFromFile("dic");
+        Dictionary words = Dictionary.smartReadFromFile("dic");
 
         //тестовый код, удалить после проверки
 //        Dictionary wordsTest = Dictionary.readFromFile("words\\src\\gui\\dictionary.txt");
