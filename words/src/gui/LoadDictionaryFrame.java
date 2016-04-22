@@ -14,7 +14,7 @@ public class LoadDictionaryFrame extends JFrame {
 
         //настройка фрейма
         setTitle("load dictionary");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setSize(400, 200);
 
         JTextField field = new JTextField(15);
