@@ -28,7 +28,7 @@ public class AppGuiFrame extends JFrame{
 //        frameChangeDictionary.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 //        frameChangeDictionary.setSize(600, 200);
 
-        JPanel centerPanel = new JPanel(new FlowLayout());
+
 //        JPanel panelChangeDictionari = new JPanel();
 
         JButton buttonNext = new JButton("next");
@@ -66,22 +66,26 @@ public class AppGuiFrame extends JFrame{
         labelsPanel.add(labelEng);
         labelsPanel.add(labelQuantity);
 
-        centerPanel.add(buttonPrev);
+        JPanel centerPanel = new JPanel(new FlowLayout());
         centerPanel.add(labelsPanel);
-        centerPanel.add(buttonNext);
 
-        JPanel bottomPanel = new JPanel(new FlowLayout());
-        bottomPanel.add(buttonChangeDictionary);
-        bottomPanel.add(buttonRandom);
+        JPanel southPanel = new JPanel(new FlowLayout());
+        southPanel.add(buttonChangeDictionary);
+        southPanel.add(buttonRandom);
 
-        JPanel bottomPanel1 = new JPanel();
-        bottomPanel1.add(buttonFirst);
-        bottomPanel1.add(buttonLast);
+        JPanel westPanel = new JPanel(new GridLayout(2, 1));
+        westPanel.add(buttonPrev);
+        westPanel.add(buttonFirst);
+
+        JPanel eastPanel = new JPanel(new GridLayout(2, 1));
+        eastPanel.add(buttonNext);
+        eastPanel.add(buttonLast);
 
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.add(centerPanel, BorderLayout.CENTER);
-        mainPanel.add(bottomPanel, BorderLayout.SOUTH);
-        mainPanel.add(bottomPanel1, BorderLayout.NORTH);
+        mainPanel.add(westPanel, BorderLayout.WEST);
+        mainPanel.add(eastPanel, BorderLayout.EAST);
+        mainPanel.add(southPanel, BorderLayout.SOUTH);
 
         add(mainPanel);
 //        frameChangeDictionary.add(panelChangeDictionari);
