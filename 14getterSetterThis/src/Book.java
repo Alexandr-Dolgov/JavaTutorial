@@ -25,12 +25,11 @@ public class Book {
         return author;
     }
 
-    public void  tearOutPage() {
-        quantityPage = quantityPage  - 1;
+    public void tearOutPage() {
+        quantityPage = quantityPage - 1;
     }
 
     public int getQuantityPage() {
         return quantityPage;
     }
-
 }

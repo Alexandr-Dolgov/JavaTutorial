@@ -25,9 +25,12 @@ public class Dictionary {
         words = new Word[0];
     }
 
-    public Word getFirst() { return words[0];
-    }
-    public Word getLast() { return words[words.length-1]; }
+    public Word getFirst() {
+        words[0].incrementQuantityDisplay();
+        return words[0]; }
+    public Word getLast() {
+        words[words.length - 1].incrementQuantityDisplay();
+        return words[words.length-1]; }
 
     public Word getNextWord() {
         index = (index == words.length - 1) ? 0 : index + 1;
@@ -46,6 +49,12 @@ public class Dictionary {
         int randomIndex = random.nextInt(words.length);
         words[randomIndex].incrementQuantityDisplay();
         return words[randomIndex];
+    }
+
+    public Dictionary readPath(){
+        LoadDictionaryFrame loadDictionaryFrame = new LoadDictionaryFrame();
+        String s = loadDictionaryFrame.displayPath;
+        return null;
     }
 
     public void deleteWord(int index) {

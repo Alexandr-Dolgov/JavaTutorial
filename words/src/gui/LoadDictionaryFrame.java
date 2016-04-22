@@ -5,7 +5,10 @@ import java.awt.*;
 
 public class LoadDictionaryFrame extends JFrame {
 
+    public String displayPath;
+
     public LoadDictionaryFrame() {
+
         //создание фрейма
         super();
 
@@ -16,21 +19,28 @@ public class LoadDictionaryFrame extends JFrame {
 
         JTextField field = new JTextField(15);
 
-        JButton buttonLoad = new JButton("load");
+        JButton buttonLoadPatch = new JButton("load patch");
         JButton buttonCancel = new JButton("cancel");
 
         JPanel panelNorth = new JPanel(new FlowLayout());
         panelNorth.add(field);
 
-        JPanel panelCentr = new JPanel(new FlowLayout());
-        panelCentr.add(buttonCancel);
-        panelCentr.add(buttonLoad);
+//        String displayPath = field.getText();
+//        this.displayPath = displayPath;
+//        System.out.println(displayPath);
+
+
+        JPanel panelCenter = new JPanel(new FlowLayout());
+        panelCenter.add(buttonLoadPatch);
+        panelCenter.add(buttonCancel);
 
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.add(panelNorth, BorderLayout.NORTH);
-        mainPanel.add(panelCentr, BorderLayout.CENTER);
+        mainPanel.add(panelCenter, BorderLayout.CENTER);
 
         //buttonLoad.addActionListener(/*new СлушательНажатияНаКнопкуЗагрузитьСловарь()*/);
+        buttonLoadPatch.addActionListener(new ReadPatch());
+
 
         add(mainPanel);
         setVisible(true);

@@ -10,7 +10,7 @@ public class ChangeDictionaryFrame extends JFrame {
         super();
 
         setTitle("chande dictionary");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setSize(400, 200);
 
         JButton buttonAddWord = new JButton("add word");

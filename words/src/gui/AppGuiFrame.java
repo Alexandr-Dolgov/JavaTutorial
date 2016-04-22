@@ -7,8 +7,7 @@ import java.awt.*;
 public class AppGuiFrame extends JFrame{
 
     public AppGuiFrame(){
-
-        super();
+        //super();
 
 //        Dictionary words = new Dictionary(false);
         //words.deleteWord(4);
@@ -22,7 +21,7 @@ public class AppGuiFrame extends JFrame{
 //        JFrame frame = new JFrame();
         setTitle("words");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(400, 200);
+//        setSize(400, 200);
 
 //        JFrame frameChangeDictionary = new JFrame();
 //        frameChangeDictionary.setTitle("change dictionary");
@@ -40,7 +39,6 @@ public class AppGuiFrame extends JFrame{
         JButton buttonChangeDictionary = new JButton("change Dictionary");
 
         Word firstWord = words.getFirst();
-        firstWord.incrementQuantityDisplay();
         JLabel labelRus = new JLabel(firstWord.getEnglish());
         JLabel labelEng = new JLabel(firstWord.getRussian());
         JLabel labelQuantity = new JLabel("" + firstWord.getQuantityDisplay());
@@ -87,6 +85,7 @@ public class AppGuiFrame extends JFrame{
 
         add(mainPanel);
 //        frameChangeDictionary.add(panelChangeDictionari);
+        pack();
 
         setVisible(true);
     }

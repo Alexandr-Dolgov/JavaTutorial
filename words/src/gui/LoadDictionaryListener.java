@@ -10,4 +10,5 @@ public class LoadDictionaryListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         new LoadDictionaryFrame();
     }
+
 }

@@ -20,6 +20,5 @@ public class AddWordListener implements ActionListener {
 
     public void actionPerformed(ActionEvent e){
         new AppGuiFrame();
-
     }
 }

@@ -15,6 +15,4 @@ public class App {
         Book thinkingInJava = new Book("Философи Java", "Брюс Экклель", 700);
         Book book = new Book("Собачье сердце", "Булгаков", 200);
     }
-
-
 }

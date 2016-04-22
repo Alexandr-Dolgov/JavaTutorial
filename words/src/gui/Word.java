@@ -35,9 +35,7 @@ public class Word {
         return russian;
     }
 
-    public String getEnglish() {
-        return english;
-    }
+    public String getEnglish() { return english; }
 
     public void incrementQuantityDisplay() {
         quantityDisplay++;
