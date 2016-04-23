@@ -17,7 +17,8 @@ public class LoadDictionaryFrame extends JFrame {
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setSize(400, 200);
 
-        JTextField field = new JTextField(15);
+        int columns = 15;
+        JTextField field = new JTextField(columns);
 
         JButton buttonLoadPatch = new JButton("load patch");
         JButton buttonCancel = new JButton("cancel");
@@ -25,9 +26,9 @@ public class LoadDictionaryFrame extends JFrame {
         JPanel panelNorth = new JPanel(new FlowLayout());
         panelNorth.add(field);
 
-//        String displayPath = field.getText();
+//        String displayPath =
+//        System.out.println(displayPath);field.getText();
 //        this.displayPath = displayPath;
-//        System.out.println(displayPath);
 
 
         JPanel panelCenter = new JPanel(new FlowLayout());

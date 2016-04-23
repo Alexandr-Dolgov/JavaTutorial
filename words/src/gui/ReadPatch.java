@@ -9,11 +9,11 @@ import java.awt.event.ActionListener;
  */
 public class ReadPatch implements ActionListener {
 
-    JTextField jTextField;
+       JTextField jTextField;
 
     public void actionPerformed(ActionEvent e){
-//        jTextField.getText()
-//        LoadDictionaryFrame myLoadDictionaryFrame = new LoadDictionaryFrame();
+        String s = jTextField.getText();
+        LoadDictionaryFrame myLoadDictionaryFrame = new LoadDictionaryFrame();
 
 //        String patch = LoadDictionaryFrame.displayPath;
 //        System.out.println(patch);
