@@ -19,7 +19,15 @@ public class NextListener implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+
+//    вызов метода getNextWord() из класса Dictionary используя переменную dictionary
+//    и передача ссылки в переменную nextWord типа Word
         Word nextWord = dictionary.getNextWord();
+
+//        используя переменную labelRus типа JLabel вызоваем метод setText класса JLabel из пакета javax.swing
+//        в который передается в виде аргумента значение,
+//        которое возвращается при вызове метода getEnglish
+//        не записываем в переменную, т.к. испотльзуем один раз
         labelRus.setText(nextWord.getEnglish());
         labelEng.setText(nextWord.getRussian());
         labelQuantity.setText("" + nextWord.getQuantityDisplay());

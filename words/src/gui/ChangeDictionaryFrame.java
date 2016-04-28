@@ -11,7 +11,7 @@ public class ChangeDictionaryFrame extends JFrame {
 
         setTitle("chande dictionary");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        setSize(400, 200);
+//        setSize(400, 200);
 
         JButton buttonAddWord = new JButton("add word");
         JButton buttonDeleteWord = new JButton("delete word");
@@ -32,6 +32,7 @@ public class ChangeDictionaryFrame extends JFrame {
         mainPanel.add(panelCenter, BorderLayout.CENTER);
 
         add(mainPanel);
+        pack();
         setVisible(true);
     }
 }

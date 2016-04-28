@@ -15,7 +15,7 @@ public class LoadDictionaryFrame extends JFrame {
         //настройка фрейма
         setTitle("load dictionary");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        setSize(400, 200);
+//        setSize(400, 200);
 
         int columns = 15;
         JTextField field = new JTextField(columns);
@@ -40,10 +40,12 @@ public class LoadDictionaryFrame extends JFrame {
         mainPanel.add(panelCenter, BorderLayout.CENTER);
 
         //buttonLoad.addActionListener(/*new СлушательНажатияНаКнопкуЗагрузитьСловарь()*/);
-        buttonLoadPatch.addActionListener(new ReadPatch());
+        buttonLoadPatch.addActionListener(new ReadPachLisener(field));
+
 
 
         add(mainPanel);
+        pack();
         setVisible(true);
     }
 }
