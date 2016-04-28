@@ -7,7 +7,23 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class AppGuiFrame extends JFrame{
+public class AppGuiFrame extends JFrame {
+
+    private JLabel labelRus;
+    private JLabel labelEng;
+    private JLabel labelQuantity;
+
+    public JLabel getLabelRus() {
+        return labelRus;
+    }
+
+    public JLabel getLabelEng() {
+        return labelEng;
+    }
+
+    public JLabel getLabelQuantity() {
+        return labelQuantity;
+    }
 
     public AppGuiFrame(){
         //super();
@@ -16,6 +32,7 @@ public class AppGuiFrame extends JFrame{
         //words.deleteWord(4);
 
         Dictionary words = Dictionary.smartReadFromFile("dic");
+        AppGui.getInstance().setDictionary(words);
 
         //тестовый код, удалить после проверки
 //        Dictionary wordsTest = Dictionary.readFromFile("words\\src\\gui\\dictionary.txt");
@@ -42,9 +59,9 @@ public class AppGuiFrame extends JFrame{
         JButton buttonChangeDictionary = new JButton("change Dictionary");
 
         Word firstWord = words.getFirst();
-        JLabel labelRus = new JLabel(firstWord.getEnglish());
-        JLabel labelEng = new JLabel(firstWord.getRussian());
-        JLabel labelQuantity = new JLabel("" + firstWord.getQuantityDisplay());
+        labelRus = new JLabel(firstWord.getEnglish());
+        labelEng = new JLabel(firstWord.getRussian());
+        labelQuantity = new JLabel("" + firstWord.getQuantityDisplay());
 
         NextListener myNextListener = new NextListener(words, labelRus, labelEng, labelQuantity);
         buttonNext.addActionListener(myNextListener);
@@ -61,7 +78,7 @@ public class AppGuiFrame extends JFrame{
         LastListener myLastListener = new LastListener(words, labelEng, labelRus, labelQuantity);
         buttonLast.addActionListener(myLastListener);
 
-        ChangeDictionaryListener myChangeDictionaryListener = new ChangeDictionaryListener();
+        ChangeDictionaryListener myChangeDictionaryListener = new ChangeDictionaryListener(this);
         buttonChangeDictionary.addActionListener(myChangeDictionaryListener);
 
         JPanel labelsPanel = new JPanel(new GridLayout(3, 1));

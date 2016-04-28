@@ -11,8 +11,14 @@ public class ChangeDictionaryListener implements ActionListener {
 //        this.frame = frame;
 //    }
 
+    private AppGuiFrame appGuiFrame;
+
+    public ChangeDictionaryListener(AppGuiFrame appGuiFrame) {
+        this.appGuiFrame = appGuiFrame;
+    }
+
     public void actionPerformed(ActionEvent e) {
-        new ChangeDictionaryFrame();
+        new ChangeDictionaryFrame(appGuiFrame);
 //        frame.setVisible(true);
     }
 }

@@ -9,20 +9,19 @@ import java.awt.event.ActionListener;
 
 public class DeleteWordListener implements ActionListener{
 
-    private Dictionary dictionary;
     private JLabel labelRus;
     private JLabel labelEng;
     private JLabel labelQuantity;
 
-    public DeleteWordListener(Dictionary dictionary, JLabel l1, JLabel l2, JLabel l3){
-        this.dictionary = dictionary;
-        labelRus = l1;
-        labelEng = l2;
-        labelQuantity = l3;
-
+    public DeleteWordListener(AppGuiFrame appGuiFrame){
+        labelRus = appGuiFrame.getLabelRus();
+        labelEng = appGuiFrame.getLabelEng();
+        labelQuantity = appGuiFrame.getLabelQuantity();
     }
 
     public void actionPerformed(ActionEvent e){
+        Dictionary dictionary = AppGui.getInstance().getDictionary();
+
         Word firstWord = dictionary.getFirst();
         dictionary.deleteWord(0);
 

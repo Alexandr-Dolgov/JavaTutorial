@@ -5,14 +5,16 @@ import java.awt.*;
 
 public class ChangeDictionaryFrame extends JFrame {
 
-    public ChangeDictionaryFrame() {
+    public ChangeDictionaryFrame(AppGuiFrame appGuiFrame) {
         super();
 
         setTitle("change dictionary");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         JButton buttonAddWord = new JButton("add word");
+
         JButton buttonDeleteWord = new JButton("delete word");
+        buttonDeleteWord.addActionListener(new DeleteWordListener(appGuiFrame));
 
         JButton buttonLoadDictionary = new JButton("load dictionary");
         buttonLoadDictionary.addActionListener(new LoadDictionaryListener());
