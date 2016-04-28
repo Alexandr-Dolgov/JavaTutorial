@@ -6,19 +6,16 @@ import java.awt.*;
 public class ChangeDictionaryFrame extends JFrame {
 
     public ChangeDictionaryFrame() {
-
         super();
 
-        setTitle("chande dictionary");
+        setTitle("change dictionary");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-//        setSize(400, 200);
 
         JButton buttonAddWord = new JButton("add word");
         JButton buttonDeleteWord = new JButton("delete word");
-        JButton buttonLoadDictionary = new JButton("load dictionary");
 
-        LoadDictionaryListener LoadDictionaryListener = new LoadDictionaryListener();
-        buttonLoadDictionary.addActionListener(LoadDictionaryListener);
+        JButton buttonLoadDictionary = new JButton("load dictionary");
+        buttonLoadDictionary.addActionListener(new LoadDictionaryListener());
 
         JPanel panelNorth = new JPanel(new FlowLayout());
         panelNorth.add(buttonAddWord);
