@@ -23,6 +23,7 @@
       <module fileurl="file://$PROJECT_DIR$/SyerraBeyts/SyerraBeyts.iml" filepath="$PROJECT_DIR$/SyerraBeyts/SyerraBeyts.iml" />
       <module fileurl="file://$PROJECT_DIR$/Unit/Unit.iml" filepath="$PROJECT_DIR$/Unit/Unit.iml" />
       <module fileurl="file://$PROJECT_DIR$/words/words.iml" filepath="$PROJECT_DIR$/words/words.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wordsMvn/wordsMvn.iml" filepath="$PROJECT_DIR$/wordsMvn/wordsMvn.iml" />
       <module fileurl="file://$PROJECT_DIR$/words/wordsNew.iml" filepath="$PROJECT_DIR$/words/wordsNew.iml" />
     </modules>
   </component>
