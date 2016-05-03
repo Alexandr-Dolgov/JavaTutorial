@@ -12,6 +12,5 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8_73x86" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.json:json:20160212" level="project" />
   </component>
 </module>
