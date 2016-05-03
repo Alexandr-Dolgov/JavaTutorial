@@ -113,16 +113,13 @@ public class Dictionary {
         return dictionary;
     }
 
-    public static Dictionary smartReadFromFile(String pathName) {
+    public static Dictionary smartReadFromFile(String pathName) throws IOException {
         Dictionary dictionary = new Dictionary();
-        try (Scanner scanner = new Scanner(new FileReader(pathName))) {
-            while (scanner.hasNext()) {
-                String rus = scanner.next();
-                String eng = scanner.next();
-                dictionary.addWord(rus, eng, false);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        Scanner scanner = new Scanner(new FileReader(pathName));
+        while (scanner.hasNext()) {
+            String rus = scanner.next();
+            String eng = scanner.next();
+            dictionary.addWord(rus, eng, false);
         }
         return dictionary;
     }

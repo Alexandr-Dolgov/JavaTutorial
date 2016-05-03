@@ -20,7 +20,7 @@ public class ReadPachLisener implements ActionListener {
         String pach = jTextField.getText();
 
 
-        Dictionary d = Dictionary.smartReadFromFile(pach);
+        //Dictionary d = Dictionary.smartReadFromFile(pach);
 
 
         LoadDictionaryFrame myLoadDictionaryFrame = new LoadDictionaryFrame();

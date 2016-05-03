@@ -5,6 +5,8 @@ import com.sokolov.words.model.Word;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 
 public class AppGuiFrame extends JFrame {
@@ -31,7 +33,24 @@ public class AppGuiFrame extends JFrame {
 //        Dictionary words = new Dictionary(false);
         //words.deleteWord(4);
 
-        Dictionary words = Dictionary.smartReadFromFile("dic");
+        Dictionary words = null;
+        try {
+            words = Dictionary.smartReadFromFile("dic");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(
+                    null,
+                    "не удается найти файл 'dic' в папке '" + System.getProperty("user.dir") + "'",
+                    "",
+                    JOptionPane.INFORMATION_MESSAGE);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Что-то пошло не так, обратитесь в техподдержку." + e,
+                    "",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+
         AppGui.getInstance().setDictionary(words);
 
         //тестовый код, удалить после проверки
