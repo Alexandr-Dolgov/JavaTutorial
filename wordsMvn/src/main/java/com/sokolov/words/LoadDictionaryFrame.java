@@ -40,7 +40,7 @@ public class LoadDictionaryFrame extends JFrame {
         mainPanel.add(panelCenter, BorderLayout.CENTER);
 
         //buttonLoad.addActionListener(/*new СлушательНажатияНаКнопкуЗагрузитьСловарь()*/);
-        buttonLoadPatch.addActionListener(new ReadPachLisener(field));
+        buttonLoadPatch.addActionListener(new ReadPathListener(field));
 
 
 

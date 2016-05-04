@@ -6,21 +6,21 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ReadPachLisener implements ActionListener {
+public class ReadPathListener implements ActionListener {
 
     JTextField jTextField;
     Dictionary dictionary;
 
-    public ReadPachLisener(JTextField jTextField){
+    public ReadPathListener(JTextField jTextField){
         this.jTextField = jTextField;
     }
 
     public void actionPerformed(ActionEvent e) {
 
-        String pach = jTextField.getText();
+        String path = jTextField.getText();
 
 
-        //Dictionary d = Dictionary.smartReadFromFile(pach);
+        //Dictionary d = Dictionary.smartReadFromFile(path);
 
 
         LoadDictionaryFrame myLoadDictionaryFrame = new LoadDictionaryFrame();

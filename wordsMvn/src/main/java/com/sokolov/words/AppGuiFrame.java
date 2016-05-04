@@ -112,11 +112,11 @@ public class AppGuiFrame extends JFrame {
         southPanel.add(buttonChangeDictionary);
         southPanel.add(buttonRandom);
 
-        JPanel westPanel = new JPanel(new GridLayout(2, 1));
+        JPanel westPanel = new JPanel(new GridLayout(2, 1, 5, 5));
         westPanel.add(buttonPrev);
         westPanel.add(buttonFirst);
 
-        JPanel eastPanel = new JPanel(new GridLayout(2, 1));
+        JPanel eastPanel = new JPanel(new GridLayout(2, 1, 5, 5));
         eastPanel.add(buttonNext);
         eastPanel.add(buttonLast);
 
