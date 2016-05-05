@@ -2,6 +2,7 @@ package com.sokolov.words.model;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
@@ -122,6 +123,15 @@ public class Dictionary {
             dictionary.addWord(rus, eng, false);
         }
         return dictionary;
+    }
+
+    public void writeToFile(String pathName) throws IOException {
+        try (FileWriter writer = new FileWriter(pathName)) { //try with resources
+            //for each
+            for (Word word: words) {
+                writer.write("" + word.getEnglish() + " " + word.getRussian() + "\n");
+            }
+        }
     }
 
 
