@@ -2,6 +2,8 @@ package com.sokolov.words;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ChangeDictionaryFrame extends JFrame {
 
@@ -17,7 +19,11 @@ public class ChangeDictionaryFrame extends JFrame {
         buttonDeleteWord.addActionListener(new DeleteWordListener(appGuiFrame));
 
         JButton buttonLoadDictionary = new JButton("load dictionary");
-        buttonLoadDictionary.addActionListener(new LoadDictionaryListener());
+        buttonLoadDictionary.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new LoadDictionaryFrame();
+            }
+        });
 
         JPanel panelNorth = new JPanel(new FlowLayout());
         panelNorth.add(buttonAddWord);
