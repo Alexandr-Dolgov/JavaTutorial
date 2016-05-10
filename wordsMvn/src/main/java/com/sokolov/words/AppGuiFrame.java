@@ -5,6 +5,8 @@ import com.sokolov.words.model.Word;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -60,15 +62,6 @@ public class AppGuiFrame extends JFrame {
 //        JFrame frame = new JFrame();
         setTitle("words");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-//        setSize(400, 200);
-
-//        JFrame frameChangeDictionary = new JFrame();
-//        frameChangeDictionary.setTitle("change dictionary");
-//        frameChangeDictionary.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-//        frameChangeDictionary.setSize(600, 200);
-
-
-//        JPanel panelChangeDictionari = new JPanel();
 
         JButton buttonNext = new JButton("next");
         JButton buttonPrev = new JButton("prev");
@@ -76,6 +69,14 @@ public class AppGuiFrame extends JFrame {
         JButton buttonFirst = new JButton("first");
         JButton buttonLast = new JButton("last");
         JButton buttonChangeDictionary = new JButton("change Dictionary");
+
+        JButton buttonSave = new JButton("save");
+        buttonSave.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            }
+        });
+
 
         Word firstWord = words.getFirst();
         labelRus = new JLabel(firstWord.getEnglish());
@@ -99,6 +100,8 @@ public class AppGuiFrame extends JFrame {
 
         ChangeDictionaryListener myChangeDictionaryListener = new ChangeDictionaryListener(this);
         buttonChangeDictionary.addActionListener(myChangeDictionaryListener);
+
+
 
         JPanel labelsPanel = new JPanel(new GridLayout(3, 1));
         labelsPanel.add(labelRus);
@@ -127,9 +130,7 @@ public class AppGuiFrame extends JFrame {
         mainPanel.add(southPanel, BorderLayout.SOUTH);
 
         add(mainPanel);
-//        frameChangeDictionary.add(panelChangeDictionari);
         pack();
-
         setVisible(true);
     }
 }
