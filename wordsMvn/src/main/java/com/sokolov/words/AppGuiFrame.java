@@ -7,8 +7,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 
 public class AppGuiFrame extends JFrame {
@@ -30,30 +28,8 @@ public class AppGuiFrame extends JFrame {
     }
 
     public AppGuiFrame(){
-        //super();
-
-//        Dictionary words = new Dictionary(false);
-        //words.deleteWord(4);
-
-        Dictionary words = null;
-        try {
-            words = Dictionary.smartReadFromFile("dic");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(
-                    null,
-                    "не удается найти файл 'dic' в папке '" + System.getProperty("user.dir") + "'",
-                    "",
-                    JOptionPane.INFORMATION_MESSAGE);
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Что-то пошло не так, обратитесь в техподдержку." + e,
-                    "",
-                    JOptionPane.INFORMATION_MESSAGE);
-        }
-
-        AppGui.getInstance().setDictionary(words);
+        DictionaryHolder.reloadDictionaryFromFile("dic");
+        Dictionary words = DictionaryHolder.getInstance().getDictionary();
 
         //тестовый код, удалить после проверки
 //        Dictionary wordsTest = Dictionary.readFromFile("words\\src\\gui\\dictionary.txt");
@@ -74,6 +50,8 @@ public class AppGuiFrame extends JFrame {
         buttonSave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+//                Dictionary.smartReadFromFile("dic");
             }
         });
 
@@ -83,7 +61,7 @@ public class AppGuiFrame extends JFrame {
         labelEng = new JLabel(firstWord.getRussian());
         labelQuantity = new JLabel("" + firstWord.getQuantityDisplay());
 
-        NextListener myNextListener = new NextListener(words, labelRus, labelEng, labelQuantity);
+        NextListener myNextListener = new NextListener(labelRus, labelEng, labelQuantity);
         buttonNext.addActionListener(myNextListener);
 
         PrevListener myPrevListener = new PrevListener(words, labelRus, labelEng, labelQuantity);

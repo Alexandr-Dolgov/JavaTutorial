@@ -1,17 +1,12 @@
 package com.sokolov.words;
 
-import com.sokolov.words.model.Dictionary;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 public class ReadPathListener implements ActionListener  {
 
-    JTextField jTextField;
-    Dictionary dictionary;
+    private JTextField jTextField;
 
     public ReadPathListener(JTextField jTextField){
         this.jTextField = jTextField;
@@ -21,8 +16,7 @@ public class ReadPathListener implements ActionListener  {
 
         String path = jTextField.getText();
 
-
-//            dictionary.smartReadFromFile(path);
+        DictionaryHolder.reloadDictionaryFromFile(path);
 
         /*в фрейме LoadDictionaryFrame пользователь вводит новый путь к словарю,
         затем нажимает кнопку load path на которую навешан слушатель ReadPathListener.

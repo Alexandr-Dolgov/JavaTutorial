@@ -87,3 +87,6 @@ public void deleteWord(int index)
 На основной фрейм AppGuiFrame добавить кнопку "сохранить" по нажатию на которую
 словарь будет сохраняться в текущую дерикторию под именем savedDic12345,
 где 12345 это количество миллисикунд которое можно получить методом java.lang.System.currentTimeMillis().
+
+По аналогии с NextListener использовать DictionaryHolder.getInstance().getDictionary() в
+PrevListener, FirstListener, LastListener

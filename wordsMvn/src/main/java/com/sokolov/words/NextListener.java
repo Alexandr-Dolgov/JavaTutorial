@@ -9,13 +9,11 @@ import java.awt.event.ActionListener;
 
 public class NextListener implements ActionListener {
 
-    private Dictionary dictionary;
     private JLabel labelRus;
     private JLabel labelEng;
     private JLabel labelQuantity;
 
-    public NextListener(Dictionary dictionary, JLabel l1, JLabel l2, JLabel l3){
-        this.dictionary = dictionary;
+    public NextListener(JLabel l1, JLabel l2, JLabel l3){
         labelRus = l1;
         labelEng = l2;
         labelQuantity = l3;
@@ -24,8 +22,13 @@ public class NextListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
 //    вызов метода getNextWord() из класса Dictionary используя переменную dictionary
-//    и передача ссылки в переменную nextWord типа Word
-        Word nextWord = dictionary.getNextWord();
+//    и передача ссылки в переменную nextWord типа Wor
+
+//      DictionaryHolder.getInstance() получили объект синглтон
+//      у объекта вызвали метод getDictionary() достали словарь
+//      из словаря достали первое слово
+
+        Word nextWord = DictionaryHolder.getInstance().getDictionary().getNextWord();
 
 //        используя переменную labelRus типа JLabel вызоваем метод setText класса JLabel из пакета javax.swing
 //        в который передается в виде аргумента значение,
