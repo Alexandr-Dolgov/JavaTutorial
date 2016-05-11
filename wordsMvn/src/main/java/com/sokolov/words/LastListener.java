@@ -9,20 +9,21 @@ import java.awt.event.ActionListener;
 
 
 public class LastListener implements ActionListener {
-    private Dictionary dictionary;
+
     private JLabel labelRus;
     private JLabel labelEng;
     private JLabel labelQuantity;
 
-    public LastListener(Dictionary dictionary, JLabel l1, JLabel l2, JLabel l3) {
-        this.dictionary = dictionary;
+    public LastListener(JLabel l1, JLabel l2, JLabel l3) {
+
         labelRus = l1;
         labelEng = l2;
         labelQuantity = l3;
     }
 
     public void actionPerformed(ActionEvent e) {
-        Word lastWord = dictionary.getLast();
+
+        Word lastWord = DictionaryHolder.getInstance().getDictionary().getLast();
         labelRus.setText(lastWord.getEnglish());
         labelEng.setText(lastWord.getRussian());
         labelQuantity.setText("" + lastWord.getQuantityDisplay());

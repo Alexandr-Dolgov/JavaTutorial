@@ -20,7 +20,7 @@ public class DeleteWordListener implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
-        Dictionary dictionary = AppGui.getInstance().getDictionary();
+        Dictionary dictionary = DictionaryHolder.getInstance().getDictionary();
 
         Word firstWord = dictionary.getFirst();
         dictionary.deleteWord(0);

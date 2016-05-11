@@ -64,16 +64,16 @@ public class AppGuiFrame extends JFrame {
         NextListener myNextListener = new NextListener(labelRus, labelEng, labelQuantity);
         buttonNext.addActionListener(myNextListener);
 
-        PrevListener myPrevListener = new PrevListener(words, labelRus, labelEng, labelQuantity);
+        PrevListener myPrevListener = new PrevListener(labelRus, labelEng, labelQuantity);
         buttonPrev.addActionListener(myPrevListener);
 
         RandomListener myRandomListener = new RandomListener(words, labelRus, labelEng, labelQuantity);
         buttonRandom.addActionListener(myRandomListener);
 
-        FirstListener myFirstListener = new FirstListener(words, labelEng, labelRus, labelQuantity);
+        FirstListener myFirstListener = new FirstListener(labelEng, labelRus, labelQuantity);
         buttonFirst.addActionListener(myFirstListener);
 
-        LastListener myLastListener = new LastListener(words, labelEng, labelRus, labelQuantity);
+        LastListener myLastListener = new LastListener(labelEng, labelRus, labelQuantity);
         buttonLast.addActionListener(myLastListener);
 
         ChangeDictionaryListener myChangeDictionaryListener = new ChangeDictionaryListener(this);
