@@ -1,5 +1,7 @@
 package com.sokolov.words;
 
+import com.sokolov.words.model.DictionaryHolder;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

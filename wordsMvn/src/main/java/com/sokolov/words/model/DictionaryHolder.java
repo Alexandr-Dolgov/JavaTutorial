@@ -1,6 +1,4 @@
-package com.sokolov.words;
-
-import com.sokolov.words.model.Dictionary;
+package com.sokolov.words.model;
 
 import javax.swing.*;
 import java.io.FileNotFoundException;

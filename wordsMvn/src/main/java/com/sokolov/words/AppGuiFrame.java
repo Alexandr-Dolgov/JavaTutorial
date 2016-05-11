@@ -1,6 +1,7 @@
 package com.sokolov.words;
 
 import com.sokolov.words.model.Dictionary;
+import com.sokolov.words.model.DictionaryHolder;
 import com.sokolov.words.model.Word;
 
 import javax.swing.*;
