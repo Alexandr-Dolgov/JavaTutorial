@@ -6,5 +6,4 @@ public class AppGui {
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
         new AppGuiFrame();
     }
-
 }

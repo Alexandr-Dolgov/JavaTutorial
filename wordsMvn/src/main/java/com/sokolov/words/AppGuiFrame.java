@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 
 public class AppGuiFrame extends JFrame {
@@ -28,9 +30,9 @@ public class AppGuiFrame extends JFrame {
         return labelQuantity;
     }
 
-    public AppGuiFrame(){
+    public AppGuiFrame() {
         DictionaryHolder.reloadDictionaryFromFile("dic");
-        Dictionary words = DictionaryHolder.getInstance().getDictionary();
+        final Dictionary words = DictionaryHolder.getInstance().getDictionary();
 
         //тестовый код, удалить после проверки
 //        Dictionary wordsTest = Dictionary.readFromFile("words\\src\\gui\\dictionary.txt");
@@ -45,14 +47,25 @@ public class AppGuiFrame extends JFrame {
         JButton buttonRandom = new JButton("random");
         JButton buttonFirst = new JButton("first");
         JButton buttonLast = new JButton("last");
-        JButton buttonChangeDictionary = new JButton("change Dictionary");
+        JButton buttonChangeDictionary = new JButton("change");
 
         JButton buttonSave = new JButton("save");
         buttonSave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Dictionary words = new Dictionary(true);
 
-//                Dictionary.smartReadFromFile("dic");
+                try {
+                    words.writeToFile("savedDic" + System.currentTimeMillis());
+                } catch (FileNotFoundException ex) {
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "не удается найти файл '" + "dic" + "'",
+                            "",
+                            JOptionPane.INFORMATION_MESSAGE);
+
+                } catch (IOException ex) {
+                }
             }
         });
 
@@ -81,7 +94,6 @@ public class AppGuiFrame extends JFrame {
         buttonChangeDictionary.addActionListener(myChangeDictionaryListener);
 
 
-
         JPanel labelsPanel = new JPanel(new GridLayout(3, 1));
         labelsPanel.add(labelRus);
         labelsPanel.add(labelEng);
@@ -93,12 +105,13 @@ public class AppGuiFrame extends JFrame {
         JPanel southPanel = new JPanel(new FlowLayout());
         southPanel.add(buttonChangeDictionary);
         southPanel.add(buttonRandom);
+        southPanel.add(buttonSave);
 
-        JPanel westPanel = new JPanel(new GridLayout(2, 1, 5, 5));
+        JPanel westPanel = new JPanel(new GridLayout(3, 1, 5, 5));
         westPanel.add(buttonPrev);
         westPanel.add(buttonFirst);
 
-        JPanel eastPanel = new JPanel(new GridLayout(2, 1, 5, 5));
+        JPanel eastPanel = new JPanel(new GridLayout(3, 1, 5, 5));
         eastPanel.add(buttonNext);
         eastPanel.add(buttonLast);
 
