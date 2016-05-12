@@ -30,7 +30,7 @@ public class DictionaryHolder {
     }
 
     public static void reloadDictionaryFromFile(String path) {
-        Dictionary dictionary = null;
+        Dictionary dictionary = getInstance().getDictionary();
         try {
             dictionary = Dictionary.smartReadFromFile(path);
         } catch (FileNotFoundException e) {

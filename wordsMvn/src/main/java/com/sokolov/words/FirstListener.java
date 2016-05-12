@@ -9,7 +9,6 @@ import java.awt.event.ActionListener;
 
 public class FirstListener implements ActionListener {
 
-
     private JLabel labelRus;
     private JLabel labelEng;
     private JLabel labelQuantity;
@@ -21,7 +20,6 @@ public class FirstListener implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-
         Word firstWord = DictionaryHolder.getInstance().getDictionary().getFirst();
 
         labelRus.setText(firstWord.getEnglish());

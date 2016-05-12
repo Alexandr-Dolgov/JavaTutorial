@@ -53,18 +53,15 @@ public class AppGuiFrame extends JFrame {
         buttonSave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Dictionary words = new Dictionary(true);
-
+                Dictionary words = DictionaryHolder.getInstance().getDictionary();
                 try {
                     words.writeToFile("savedDic" + System.currentTimeMillis());
-                } catch (FileNotFoundException ex) {
+                } catch (IOException ex) {
                     JOptionPane.showMessageDialog(
                             null,
-                            "не удается найти файл '" + "dic" + "'",
+                            "произошла ошибка при записи в файл",
                             "",
                             JOptionPane.INFORMATION_MESSAGE);
-
-                } catch (IOException ex) {
                 }
             }
         });
@@ -81,7 +78,7 @@ public class AppGuiFrame extends JFrame {
         PrevListener myPrevListener = new PrevListener(labelRus, labelEng, labelQuantity);
         buttonPrev.addActionListener(myPrevListener);
 
-        RandomListener myRandomListener = new RandomListener(words, labelRus, labelEng, labelQuantity);
+        RandomListener myRandomListener = new RandomListener(labelRus, labelEng, labelQuantity);
         buttonRandom.addActionListener(myRandomListener);
 
         FirstListener myFirstListener = new FirstListener(labelEng, labelRus, labelQuantity);
