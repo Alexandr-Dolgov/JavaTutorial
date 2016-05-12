@@ -1,5 +1,6 @@
-package com.sokolov.words;
+package com.sokolov.words.frames.dictionary.change;
 
+import com.sokolov.words.frames.appgui.AppGuiFrame;
 import com.sokolov.words.model.Dictionary;
 import com.sokolov.words.model.DictionaryHolder;
 import com.sokolov.words.model.Word;

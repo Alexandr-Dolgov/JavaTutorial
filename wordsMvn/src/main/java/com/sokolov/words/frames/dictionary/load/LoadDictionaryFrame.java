@@ -1,4 +1,4 @@
-package com.sokolov.words;
+package com.sokolov.words.frames.dictionary.load;
 
 import javax.swing.*;
 import java.awt.*;

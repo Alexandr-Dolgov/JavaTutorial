@@ -1,4 +1,4 @@
-package com.sokolov.words;
+package com.sokolov.words.frames.appgui;
 
 import com.sokolov.words.model.Dictionary;
 import com.sokolov.words.model.DictionaryHolder;
@@ -8,7 +8,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 

@@ -1,4 +1,6 @@
-package com.sokolov.words;
+package com.sokolov.words.frames.appgui;
+
+import com.sokolov.words.frames.dictionary.change.ChangeDictionaryFrame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

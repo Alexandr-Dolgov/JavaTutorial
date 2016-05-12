@@ -1,4 +1,4 @@
-package com.sokolov.words;
+package com.sokolov.words.frames.appgui;
 
 import com.sokolov.words.model.Dictionary;
 import com.sokolov.words.model.DictionaryHolder;
