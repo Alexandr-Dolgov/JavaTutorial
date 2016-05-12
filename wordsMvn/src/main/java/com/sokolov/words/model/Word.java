@@ -40,4 +40,11 @@ public class Word {
     public void incrementQuantityDisplay() {
         quantityDisplay++;
     }
+
+    /*
+    @Override
+    public boolean equals(Object obj) {
+
+    }
+    */
 }

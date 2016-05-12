@@ -99,3 +99,7 @@ PrevListener, FirstListener, LastListener
 В окне ChangeDictionaryFrame по кнопке 'add word'
 открывать новое окно с 2 полями ввода: английского слова и русского
 и кнопки добавить. http://framebox.org/Xkww
+
+В классе Word реализовать метод equals
+в качестве примера смотреть на equals класса String
+и на документацию по методу equals из классе Object
