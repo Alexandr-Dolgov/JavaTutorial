@@ -90,3 +90,12 @@ public void deleteWord(int index)
 
 По аналогии с NextListener использовать DictionaryHolder.getInstance().getDictionary() в
 PrevListener, FirstListener, LastListener
+---------------------------2016.05.12
+В окне LoadDictionaryFrame
+по кнопке отмена закрывать окно
+по при нажатии на кнопку загрузить, но только загружать новый словарь, но и
+закрывать окно и показывать MessageDialog с сообщением что словарь загрузился.
+
+В окне ChangeDictionaryFrame по кнопке 'add word'
+открывать новое окно с 2 полями ввода: английского слова и русского
+и кнопки добавить. http://framebox.org/Xkww
