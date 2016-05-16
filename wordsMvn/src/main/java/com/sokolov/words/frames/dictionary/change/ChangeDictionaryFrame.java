@@ -2,6 +2,8 @@ package com.sokolov.words.frames.dictionary.change;
 
 import com.sokolov.words.frames.appgui.AppGuiFrame;
 import com.sokolov.words.frames.dictionary.load.LoadDictionaryFrame;
+import com.sokolov.words.frames.dictionary.load.AddDictionaryFrame;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,12 +19,19 @@ public class ChangeDictionaryFrame extends JFrame {
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         JButton buttonAddWord = new JButton("add word");
+        buttonAddWord.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AddDictionaryFrame();
+            }
+        });
 
         JButton buttonDeleteWord = new JButton("delete word");
         buttonDeleteWord.addActionListener(new DeleteWordListener(appGuiFrame));
 
         JButton buttonLoadDictionary = new JButton("load dictionary");
         buttonLoadDictionary.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 new LoadDictionaryFrame();
             }
