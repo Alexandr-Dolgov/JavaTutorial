@@ -2,6 +2,8 @@ package com.sokolov.words.frames.dictionary.load;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class LoadDictionaryFrame extends JFrame {
 
@@ -35,6 +37,12 @@ public class LoadDictionaryFrame extends JFrame {
 
         //buttonLoad.addActionListener(/*new СлушательНажатияНаКнопкуЗагрузитьСловарь()*/);
         buttonLoadPatch.addActionListener(new ReadPathListener(field));
+        buttonCancel.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+            }
+        });
 
         add(mainPanel);
         pack();

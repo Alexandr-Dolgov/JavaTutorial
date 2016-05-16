@@ -31,8 +31,10 @@ public class DictionaryHolder {
 
     public static void reloadDictionaryFromFile(String path) {
         Dictionary dictionary = getInstance().getDictionary();
+
         try {
             dictionary = Dictionary.smartReadFromFile(path);
+
         } catch (FileNotFoundException e) {
             JOptionPane.showMessageDialog(
                     null,
@@ -47,5 +49,6 @@ public class DictionaryHolder {
                     JOptionPane.INFORMATION_MESSAGE);
         }
         getInstance().setDictionary(dictionary);
+
     }
 }
