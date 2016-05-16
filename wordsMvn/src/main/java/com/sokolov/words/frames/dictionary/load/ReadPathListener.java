@@ -19,5 +19,12 @@ public class ReadPathListener implements ActionListener {
         String path = jTextField.getText();
 
         DictionaryHolder.reloadDictionaryFromFile(path);
+
+        JOptionPane.showMessageDialog(
+                null,
+                "словарь загрузился",
+                "",
+                JOptionPane.INFORMATION_MESSAGE);
+
     }
 }
