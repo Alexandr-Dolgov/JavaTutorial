@@ -1,5 +1,7 @@
 package com.sokolov.words.frames.dictionary.load;
 
+import com.sokolov.words.model.DictionaryHolder;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -19,7 +21,7 @@ public class LoadDictionaryFrame extends JFrame {
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         int columns = 15;
-        JTextField field = new JTextField(columns);
+        final JTextField field = new JTextField(columns);
 
         JButton buttonLoadPatch = new JButton("load path");
         JButton buttonCancel = new JButton("cancel");
@@ -36,7 +38,24 @@ public class LoadDictionaryFrame extends JFrame {
         mainPanel.add(panelCenter, BorderLayout.CENTER);
 
         //buttonLoad.addActionListener(/*new СлушательНажатияНаКнопкуЗагрузитьСловарь()*/);
-        buttonLoadPatch.addActionListener(new ReadPathListener(field));
+        buttonLoadPatch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String path = field.getText();
+                DictionaryHolder.reloadDictionaryFromFile(path);
+
+                setVisible(false);
+
+                JOptionPane.showMessageDialog(
+                        null,
+                        "словарь загрузился",
+                        "",
+                        JOptionPane.INFORMATION_MESSAGE);
+
+
+
+            }
+        });
         buttonCancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

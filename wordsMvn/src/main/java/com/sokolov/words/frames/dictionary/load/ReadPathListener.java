@@ -17,7 +17,6 @@ public class ReadPathListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         String path = jTextField.getText();
-
         DictionaryHolder.reloadDictionaryFromFile(path);
 
         JOptionPane.showMessageDialog(
