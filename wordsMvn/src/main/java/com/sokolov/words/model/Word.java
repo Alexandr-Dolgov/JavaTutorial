@@ -41,10 +41,14 @@ public class Word {
         quantityDisplay++;
     }
 
-    /*
-    @Override
-    public boolean equals(Object obj) {
 
+    @Override
+    public boolean equals(Object anObject) {
+        if (anObject instanceof Word){
+            Word anotherWord = (Word)anObject;
+            return english.equals(anotherWord.english);
+        }
+        return false;
     }
-    */
+
 }

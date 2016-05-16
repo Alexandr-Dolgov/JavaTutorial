@@ -3,8 +3,8 @@ package com.sokolov.words.frames.dictionary.load;
 import javax.swing.*;
 import java.awt.*;
 
-public class AddDictionaryFrame extends JFrame {
-    public AddDictionaryFrame() {
+public class AddWordFrame extends JFrame {
+    public AddWordFrame() {
         super();
         setTitle("add word");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

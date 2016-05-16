@@ -2,7 +2,7 @@ package com.sokolov.words.frames.dictionary.change;
 
 import com.sokolov.words.frames.appgui.AppGuiFrame;
 import com.sokolov.words.frames.dictionary.load.LoadDictionaryFrame;
-import com.sokolov.words.frames.dictionary.load.AddDictionaryFrame;
+import com.sokolov.words.frames.dictionary.load.AddWordFrame;
 
 
 import javax.swing.*;
@@ -22,7 +22,7 @@ public class ChangeDictionaryFrame extends JFrame {
         buttonAddWord.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new AddDictionaryFrame();
+                new AddWordFrame();
             }
         });
 
