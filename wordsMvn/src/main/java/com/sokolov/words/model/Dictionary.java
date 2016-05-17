@@ -28,10 +28,13 @@ public class Dictionary {
 
     public Word getFirst() {
         words[0].incrementQuantityDisplay();
-        return words[0]; }
+        return words[0];
+    }
+
     public Word getLast() {
         words[words.length - 1].incrementQuantityDisplay();
-        return words[words.length-1]; }
+        return words[words.length-1];
+    }
 
     public Word getNextWord() {
         index = (index == words.length - 1) ? 0 : index + 1;
