@@ -107,3 +107,6 @@ PrevListener, FirstListener, LastListener
 В классе Word реализовать метод equals
 в качестве примера смотреть на equals класса String
 и на документацию по методу equals из классе Object
+---------------------------2016.05.17
+В AddWordFrame добавлять слово не только по нажатию кнопки мышкой,
+но и при нажатии клавиши Enter когда окно AddWordFrame активно.

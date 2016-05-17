@@ -146,15 +146,6 @@ public class Dictionary {
         words = newWords;
     }
 
-    public void addWordNew(String rus, String eng) {
-        Word[] newWords = new Word[words.length + 1];
-        for (int i = 0; i < words.length; i++) {
-            newWords[i] = words[i];
-        }
-        Word newWord = new Word(rus, eng);
-        newWords[words.length] = newWord;
-        words = newWords;
-    }
     public void displayNext() {
         index = (index == words.length - 1) ? 0 : index + 1;
         words[index].displayWords();

@@ -12,12 +12,6 @@ public class Word {
         english = eng;
         onRussian = onRus;
     }
-    public Word(String rus, String eng) {
-        russian = rus;
-        english = eng;
-    }
-
-
 
     public void displayWords() {
         System.out.println((onRussian) ? russian : english);
@@ -50,9 +44,12 @@ public class Word {
 
     @Override
     public boolean equals(Object anObject) {
+        if (this == anObject){
+            return true;
+        }
         if (anObject instanceof Word){
             Word anotherWord = (Word)anObject;
-            return english.equals(anotherWord.english);
+            return english.equals(anotherWord.english) && russian.equals(anotherWord.russian);
         }
         return false;
     }
