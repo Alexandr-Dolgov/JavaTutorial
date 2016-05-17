@@ -1,9 +1,9 @@
 package com.sokolov.words.model;
 
-//import org.junit.Test;
+import org.junit.Test;
 
 public class WordTest {
-/*
+
     @Test
     public void equals_X_and_X() {
         Word word = new Word("привет", "hello", false);
@@ -16,5 +16,5 @@ public class WordTest {
         Word y = new Word("", "goodbye", false);
         org.junit.Assert.assertFalse(x.equals(y));
     }
-*/
+
 }

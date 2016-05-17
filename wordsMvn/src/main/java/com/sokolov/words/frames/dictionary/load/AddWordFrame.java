@@ -38,7 +38,7 @@ public class AddWordFrame extends JFrame {
                 Dictionary dictionary = DictionaryHolder.getInstance().getDictionary();
                 String wordEng = fieldEng.getText();
                 String wordRus = fieldRus.getText();
-                dictionary.addWordNew(wordEng, wordRus);
+                dictionary.addWord(wordRus, wordEng, false);
 
                 setVisible(false);
                 JOptionPane.showMessageDialog(
