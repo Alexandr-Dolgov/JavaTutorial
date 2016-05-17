@@ -12,6 +12,12 @@ public class Word {
         english = eng;
         onRussian = onRus;
     }
+    public Word(String rus, String eng) {
+        russian = rus;
+        english = eng;
+    }
+
+
 
     public void displayWords() {
         System.out.println((onRussian) ? russian : english);
