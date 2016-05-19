@@ -114,3 +114,4 @@ PrevListener, FirstListener, LastListener
 
 В классе Dictionary в методе addWord использовать для копирования массива
 System.arraycopy
+
