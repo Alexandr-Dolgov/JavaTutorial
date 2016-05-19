@@ -18,16 +18,16 @@ public class AddWordFrame extends JFrame {
         final JTextField fieldEng = new JTextField(columns);
         final JTextField fieldRus = new JTextField(columns);
 
-        JPanel panelEast = new JPanel(new GridLayout(2, 1, 5, 5));
-        panelEast.add(fieldEng);
-        panelEast.add(fieldRus);
+        JPanel panelWest = new JPanel(new GridLayout(2, 1, 5, 5));
+        panelWest.add(fieldEng);
+        panelWest.add(fieldRus);
 
         final JLabel labelEng = new JLabel("eng");
         final JLabel labelRus = new JLabel("rus");
 
-        JPanel panelWest = new JPanel(new GridLayout(2, 1, 5, 5));
-        panelWest.add(labelEng);
-        panelWest.add(labelRus);
+        JPanel panelEest = new JPanel(new GridLayout(2, 1, 5, 5));
+        panelEest.add(labelEng);
+        panelEest.add(labelRus);
 
 
         JButton buttonAddWord = new JButton("add word");
@@ -50,8 +50,8 @@ public class AddWordFrame extends JFrame {
         });
 
         JPanel mainPanel = new JPanel(new BorderLayout());
-        mainPanel.add(panelEast, BorderLayout.EAST);
-        mainPanel.add(panelWest, BorderLayout.WEST);
+        mainPanel.add(panelWest, BorderLayout.EAST);
+        mainPanel.add(panelEest, BorderLayout.WEST);
         mainPanel.add(buttonAddWord, BorderLayout.SOUTH);
 
         add(mainPanel);
