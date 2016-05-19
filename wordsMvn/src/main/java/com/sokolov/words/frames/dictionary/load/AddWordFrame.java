@@ -49,32 +49,32 @@ public class AddWordFrame extends JFrame {
         });
 
         addKeyListener(new KeyAdapter() {
-//            @Override
-//            public void keyTyped(KeyEvent e) {
-//            }
-
             @Override
             public void keyPressed(KeyEvent e) {
-
                 int key = e.getKeyCode();
-                if (key == KeyEvent.VK_ENTER) {
-                    Dictionary dictionary = DictionaryHolder.getInstance().getDictionary();
-                    String wordEng = fieldEng.getText();
-                    String wordRus = fieldRus.getText();
-                    dictionary.addWord(wordRus, wordEng, false);
-
-                    setVisible(false);
+                if (key != KeyEvent.VK_ENTER) {
+                    return;
+                }
+                Dictionary dictionary = DictionaryHolder.getInstance().getDictionary();
+                String wordEng = fieldEng.getText();
+                String wordRus = fieldRus.getText();
+                if (wordEng.equals("") || wordRus.equals("")) {
                     JOptionPane.showMessageDialog(
                             null,
-                            "добавлено слово " + wordEng + " " + wordRus,
+                            "пустые поля " + wordEng + " " + wordRus,
                             "",
                             JOptionPane.INFORMATION_MESSAGE);
+                    return;
                 }
-            }
 
-//            @Override
-//            public void keyReleased(KeyEvent e) {
-//            }
+                dictionary.addWord(wordRus, wordEng, false);
+                setVisible(false);
+                JOptionPane.showMessageDialog(
+                        null,
+                        "добавлено слово " + wordEng + " " + wordRus,
+                        "",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
         });
 
         JPanel mainPanel = new JPanel(new BorderLayout());
