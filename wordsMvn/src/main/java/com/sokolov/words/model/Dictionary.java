@@ -140,9 +140,10 @@ public class Dictionary {
 
     public void addWord(String rus, String eng, boolean onRus) {
         Word[] newWords = new Word[words.length + 1];
-        for (int i = 0; i < words.length; i++) {
-            newWords[i] = words[i];
-        }
+        System.arraycopy(words, 0, newWords, 0, words.length);
+//        for (int i = 0; i < words.length; i++) {
+//            newWords[i] = words[i];
+//        }
         Word newWord = new Word(rus, eng, onRus);
         newWords[words.length] = newWord;
         words = newWords;
