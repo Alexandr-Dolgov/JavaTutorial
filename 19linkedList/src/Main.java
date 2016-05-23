@@ -1,9 +1,8 @@
 public class Main {
-
     public static void main(String[] args) {
-        LL list = new LL();
-        list.add("a");
-        list.add("b");
+        Stack stack = new Stack();
+        stack.push("b");
+        Object obj = stack.pop();
+        System.out.println(obj);
     }
-
 }
