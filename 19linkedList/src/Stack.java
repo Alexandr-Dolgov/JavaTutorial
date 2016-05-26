@@ -5,9 +5,9 @@ public class Stack { //стэк - стопка элементов. послед�
     private Node top = null;//head - голова
 
     private class Node { //узел
-            Object value;   //значение
-            Node next;      //ссылка на следующий узел
-        }
+        Object value;   //значение
+        Node next;      //ссылка на следующий узел
+    }
 
     boolean push(Object o) { //положить (втолкнуть) элемент на вершуны стека
         Node newNode = new Node();
@@ -26,6 +26,22 @@ public class Stack { //стэк - стопка элементов. послед�
             return val;
         }
         return null;
+    }
+
+    @Override
+    public String toString() {
+        //[a, ab, bc]
+        String s = "[";
+        if (top == null) {
+            return s + "]";
+        }
+        Node currentNode = top;
+        while (currentNode.next != null) {
+            s += currentNode.value.toString() + ", ";
+            currentNode = currentNode.next;
+        }
+        s += currentNode.value.toString();
+        return s + "]";
     }
 
     int size(){ // сложность O(1)
