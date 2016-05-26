@@ -27,17 +27,24 @@ public class Queue {
         Node newNode = new Node();
         newNode.value = o;
         newNode.next = front;
-        newNode.next = back;
+        if (front == null) {
+            newNode.next = back;
+            front = newNode;
+        }
+        back = newNode;
+
         size++;
     }
 
     public Object dequeue(){
         if (front != null){
-            Object val = back.next;
+            Object val = front.value;
             size--;
+            front = front.next;
             return val;
         }
         return null;
+
     }
 
     int size(){return size;}

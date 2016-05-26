@@ -2,7 +2,7 @@ public class Stack { //стэк - стопка элементов. послед�
 
     private int size = 0;
 
-    private Node first = null;//head - голова
+    private Node top = null;//head - голова
 
     private class Node { //узел
             Object value;   //значение
@@ -12,16 +12,16 @@ public class Stack { //стэк - стопка элементов. послед�
     boolean push(Object o) { //положить (втолкнуть) элемент на вершуны стека
         Node newNode = new Node();
         newNode.value = o;
-        newNode.next = first;
-        first = newNode;
+        newNode.next = top;
+        top = newNode;
         size++;
         return true;
     }
 
     Object pop() { //взять (вытолкнуть) элемент с вершины стека
-        if (first != null) {
-            Object val = first.value;
-            first = first.next;
+        if (top != null) {
+            Object val = top.value;
+            top = top.next;
             size--;
             return val;
         }
@@ -33,7 +33,7 @@ public class Stack { //стэк - стопка элементов. послед�
     }
 
     int size2() { // сложность O(N)
-        Node current = first;
+        Node current = top;
         if (current == null) {
             return 0;
         }

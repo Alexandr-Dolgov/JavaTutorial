@@ -6,7 +6,7 @@ public class Main {
         System.out.println(obj);
 
         Queue queue = new Queue();
-        queue.equals("f");
+        queue.enqueue("f");
         Object obj1 = queue.dequeue();
         System.out.println(obj1);
 
