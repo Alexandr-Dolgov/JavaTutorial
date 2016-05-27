@@ -22,10 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="19linkedListMvn" />
         <module name="wordsMvn" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="19linkedListMvn" target="1.5" />
       <module name="wordsMvn" target="1.7" />
     </bytecodeTargetLevel>
   </component>
