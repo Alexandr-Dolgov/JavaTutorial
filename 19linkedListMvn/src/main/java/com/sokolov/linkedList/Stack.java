@@ -46,6 +46,25 @@ public class Stack { //стэк - стопка элементов. послед�
         return s + "]";
     }
 
+    public Object get(int index){
+        int indexEl = 0;
+        String s;
+        if (top == null){
+            return "[]";
+        }
+        Node currentNode = top;
+        while (currentNode != null){
+            s = currentNode.value.toString();
+            currentNode = currentNode.next;
+            if (indexEl == index-1){
+                return s;
+            }
+            indexEl++;
+        }
+        s = currentNode.value.toString();
+        return s;
+    }
+
     public int getSize() { // сложность O(1)
         return size;
     }

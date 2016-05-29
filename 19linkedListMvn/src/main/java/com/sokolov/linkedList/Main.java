@@ -12,6 +12,9 @@ public class Main {
         stack2.push("ab");
         stack2.push("a");
         System.out.println(stack2);
+        System.out.println(stack2.get(1));
+        System.out.println(stack2.get(3));
+        System.out.println(stack2.get(2));
 
         Stack stack = new Stack();
         stack.push("b");
