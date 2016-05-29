@@ -3,6 +3,7 @@ package com.sokolov.words.frames.appgui;
 import com.sokolov.words.model.Dictionary;
 import com.sokolov.words.model.DictionaryHolder;
 import com.sokolov.words.model.Word;
+import com.sokolov.words.frames.dictionary.load.SaveFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -65,6 +66,14 @@ public class AppGuiFrame extends JFrame {
             }
         });
 
+        JButton buttonSave2 = new JButton(("save2"));
+        buttonSave2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new SaveFrame();
+            }
+        });
+
 
         Word firstWord = words.getFirst();
         labelRus = new JLabel(firstWord.getEnglish());
@@ -102,6 +111,7 @@ public class AppGuiFrame extends JFrame {
         southPanel.add(buttonChangeDictionary);
         southPanel.add(buttonRandom);
         southPanel.add(buttonSave);
+        southPanel.add(buttonSave2);
 
         JPanel westPanel = new JPanel(new GridLayout(3, 1, 5, 5));
         westPanel.add(buttonPrev);
