@@ -31,7 +31,9 @@ public class Queue {
         newNode.next = top;
         if (top == null) {
             top = newNode;
-    }
+    } else {
+            newNode.next = back;
+        }
         back = newNode;
         size++;
     }
@@ -45,6 +47,21 @@ public class Queue {
         }
         return null;
 
+    }
+
+    @Override
+    public String toString(){
+        String s = "[";
+        if (back == null){
+            return s + "]";
+        }
+        Node currentNode = back;
+        while (currentNode.next != null){
+            s += currentNode.value.toString() + ", ";
+            currentNode = currentNode.next;
+        }
+        s += currentNode.value.toString();
+        return s + "]";
     }
 
 
