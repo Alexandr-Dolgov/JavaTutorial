@@ -6,6 +6,7 @@
 
     <groupId>com.sokolov</groupId>
     <artifactId>words</artifactId>
+    <packaging>pom</packaging>
     <version>0.1</version>
 
     <build>
@@ -46,6 +47,9 @@
             </plugin>
         </plugins>
     </build>
+    <modules>
+        <module>../19linkedListMvn</module>
+    </modules>
 
     <dependencies>
         <dependency>

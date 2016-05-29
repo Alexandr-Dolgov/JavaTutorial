@@ -1,3 +1,5 @@
+package com.sokolov.linkedList;
+
 /**
  * Created by AK on 25.05.2016.
  */
@@ -5,7 +7,7 @@
 1. Повторить класс Stack не подсматривая в реализацию.
 2. Сделать класс Очередь (Queue)
 с полями
-    front//перед очереди из которого мы берем элементы
+    top//перед очереди из которого мы берем элементы
     back//зад очереди, в который мы вставляем элементы
 с методами
     void enqueue(Object o)  //вставка элемента
@@ -14,7 +16,7 @@
  */
 public class Queue {
 
-    private Node front = null;
+    private Node top = null;
     private Node back = null;
     private int size = 0;
 
@@ -26,26 +28,25 @@ public class Queue {
     public void enqueue(Object o){
         Node newNode = new Node();
         newNode.value = o;
-        newNode.next = front;
-        if (front == null) {
-            newNode.next = back;
-            front = newNode;
-        }
+        newNode.next = top;
+        if (top == null) {
+            top = newNode;
+    }
         back = newNode;
-
         size++;
     }
 
     public Object dequeue(){
-        if (front != null){
-            Object val = front.value;
+        if (top != null){
+            Object val = top.value;
             size--;
-            front = front.next;
+            top = top.next;
             return val;
         }
         return null;
 
     }
 
-    int size(){return size;}
+
+    public int getSize(){return size;}
 }
