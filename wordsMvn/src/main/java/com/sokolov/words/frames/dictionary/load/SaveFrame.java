@@ -1,10 +1,14 @@
 package com.sokolov.words.frames.dictionary.load;
 
+import com.sokolov.words.model.Dictionary;
+import com.sokolov.words.model.DictionaryHolder;
+import com.sokolov.words.model.Word;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 /**
  * Created by AK on 29.05.2016.
@@ -16,8 +20,8 @@ public class SaveFrame extends JFrame{
         setTitle("save");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
-        int colums = 15;
-        final JTextField field = new JTextField(colums);
+        int columns = 15;
+        final JTextField field = new JTextField(columns);
 
         JPanel panelEast = new JPanel(new FlowLayout());
         panelEast.add(field);
@@ -28,7 +32,22 @@ public class SaveFrame extends JFrame{
         buttonSave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Dictionary words = DictionaryHolder.getInstance().getDictionary();
+                try {
+                    String pathName = field.getText();
+                    words.writeToFile(pathName);
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "файл записан и сохранен",
+                            "",
+                            JOptionPane.INFORMATION_MESSAGE);
+                }catch (IOException ex){
+                    JOptionPane.showConfirmDialog(
+                            null,
+                            "ошибка при записи",
+                            "",
+                            JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
 
