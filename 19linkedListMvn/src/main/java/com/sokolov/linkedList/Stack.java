@@ -63,6 +63,34 @@ public class Stack { //стэк - стопка элементов. послед�
         throw new RuntimeException("incorrect algorithm");//до этой строчки не должны дойти
     }
 
+    /**
+     * элемент на вершине стека имеет индекс 0
+     */
+    public boolean add(int index, Object value) {
+        if (index < 0 || index > size) {
+            return false;
+        }
+
+        if (index == 0) {
+            return push(value);
+        }
+
+        int currentIndex = 0;
+        Node currentNode = top;
+        do {
+            if (index == currentIndex) {
+                Node newNode = new Node();
+                newNode.value = value;
+                newNode.next = currentNode.next;
+                currentNode.next = newNode;
+            }
+            currentNode = currentNode.next;
+            currentIndex++;
+        } while (currentNode.next != null);
+
+        return true;
+    }
+
     public int getSize() { // сложность O(1)
         return size;
     }
