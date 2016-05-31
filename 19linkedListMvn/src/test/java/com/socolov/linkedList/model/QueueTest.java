@@ -1,6 +1,7 @@
 package com.socolov.linkedList.model;
 
 import com.sokolov.linkedList.Queue;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -8,15 +9,31 @@ import org.junit.Test;
  */
 public class QueueTest {
     @Test
-    public void test() {
+    public void tes() {
         Queue queue = new Queue();
         queue.enqueue("j");
         queue.enqueue("jj");
         queue.enqueue("123");
-        queue.enqueue(new Object());
+        Object o = new Object();
+        queue.enqueue(o);
 
-        for (int i = 1; i <= queue.getSize() + 1; i++) {
-            queue.dequeue();
-        }
+        Assert.assertEquals("[" + o + ", 123, jj, j]", queue.toString());
+
+        Assert.assertEquals(4, queue.getSize());
+
+        Assert.assertEquals("j", queue.dequeue());
+        Assert.assertEquals("jj", queue.dequeue());
+        Assert.assertEquals("123", queue.dequeue());
+        Assert.assertEquals(o, queue.dequeue());
+
+        Assert.assertEquals(0, queue.getSize());
+
+        Assert.assertNull(queue.dequeue());
+    }
+
+    @Test
+    public void test_dequeFromEmptyQueue() {
+        Queue queue = new Queue();
+        Assert.assertNull(queue.dequeue());
     }
 }

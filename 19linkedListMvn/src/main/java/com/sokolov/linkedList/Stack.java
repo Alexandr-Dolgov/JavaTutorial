@@ -47,22 +47,20 @@ public class Stack { //стэк - стопка элементов. послед�
     }
 
     public Object get(int index){
-        int indexEl = 0;
-        String s;
-        if (top == null){
-            return "[]";
+        int currentNodeIndex = 0;
+
+        if (top == null || index < 0 || index >= size){
+            throw new IndexOutOfBoundsException();
         }
         Node currentNode = top;
         while (currentNode != null){
-            s = currentNode.value.toString();
-            currentNode = currentNode.next;
-            if (indexEl == index-1){
-                return s;
+            if (index == currentNodeIndex) {
+                return currentNode.value;
             }
-            indexEl++;
+            currentNode = currentNode.next;
+            currentNodeIndex++;
         }
-        s = currentNode.value.toString();
-        return s;
+        throw new RuntimeException("incorrect algorithm");//до этой строчки не должны дойти
     }
 
     public int getSize() { // сложность O(1)
