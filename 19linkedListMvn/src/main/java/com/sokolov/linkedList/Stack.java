@@ -30,6 +30,7 @@ public class Stack { //стэк - стопка элементов. послед�
         return null;
     }
 
+    /*
     @Override
     public String toString() {
         //[a, ab, bc]
@@ -44,6 +45,24 @@ public class Stack { //стэк - стопка элементов. послед�
         }
         s += currentNode.value.toString();
         return s + "]";
+    }
+    */
+
+    @Override
+    public String toString() {
+        //[a, ab, bc]
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        if (top == null) {
+            return sb.append(']').toString();
+        }
+        Node currentNode = top;
+        while (currentNode.next != null) {
+            sb.append(currentNode.value.toString()).append(", ");
+            currentNode = currentNode.next;
+        }
+        sb.append(currentNode.value.toString());
+        return sb.append(']').toString();
     }
 
     public Object get(int index){

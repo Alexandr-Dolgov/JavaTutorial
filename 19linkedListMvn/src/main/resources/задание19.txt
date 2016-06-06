@@ -21,3 +21,7 @@
 Object get(int index)
 --------------2016.05.31
 Написать Unit тесты на методы классов Stack, Queue
+
+Дописать метод add(index, value) в классе Stack
+
+Реализовать в классе стек интерфейс java.lang.Iterable
