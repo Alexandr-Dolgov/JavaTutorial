@@ -36,6 +36,7 @@ public class SaveFrame extends JFrame{
                 try {
                     String pathName = field.getText();
                     words.writeToFile(pathName);
+                    setVisible(false);
                     JOptionPane.showMessageDialog(
                             null,
                             "файл записан и сохранен",
