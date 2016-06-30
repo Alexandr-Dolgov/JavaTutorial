@@ -14,6 +14,9 @@ import java.io.IOException;
  * Created by AK on 29.05.2016.
  */
 public class SaveFrame extends JFrame{
+
+    JComboBox formatsComboBox;
+
     public SaveFrame(){
         super();
 
@@ -23,42 +26,57 @@ public class SaveFrame extends JFrame{
         int columns = 15;
         final JTextField field = new JTextField(columns);
 
-        JPanel panelEast = new JPanel(new FlowLayout());
-        panelEast.add(field);
+        String[] formats = {"txt", "json", "obj"};
+        formatsComboBox = new JComboBox(formats);
 
-        final JLabel label = new JLabel("path");
+        if (formatsComboBox.getSelectedItem() != "txt"){
+            JOptionPane.showMessageDialog(
+                    null,
+                    "этот функционал еще не реализован",
+                    "",
+                    JOptionPane.INFORMATION_MESSAGE);
+        } else {
 
-        JButton buttonSave = new JButton("save");
-        buttonSave.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Dictionary words = DictionaryHolder.getInstance().getDictionary();
-                try {
-                    String pathName = field.getText();
-                    words.writeToFile(pathName);
-                    setVisible(false);
-                    JOptionPane.showMessageDialog(
-                            null,
-                            "файл записан и сохранен",
-                            "",
-                            JOptionPane.INFORMATION_MESSAGE);
-                }catch (IOException ex){
-                    JOptionPane.showConfirmDialog(
-                            null,
-                            "ошибка при записи",
-                            "",
-                            JOptionPane.INFORMATION_MESSAGE);
+
+            JPanel panelEast = new JPanel(new GridLayout(2, 1, 5, 5));
+            panelEast.add(field);
+            panelEast.add(formatsComboBox);
+
+            final JLabel label = new JLabel("path");
+
+            JButton buttonSave = new JButton("save");
+            buttonSave.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    Dictionary words = DictionaryHolder.getInstance().getDictionary();
+                    try {
+                        String pathName = field.getText();
+                        words.writeToFile(pathName);
+                        setVisible(false);
+                        JOptionPane.showMessageDialog(
+                                null,
+                                "файл записан и сохранен",
+                                "",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    } catch (IOException ex) {
+                        JOptionPane.showConfirmDialog(
+                                null,
+                                "ошибка при записи",
+                                "",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    }
                 }
-            }
-        });
+            });
 
-        JPanel mainPanel = new JPanel(new BorderLayout());
-        mainPanel.add(label, BorderLayout.WEST);
-        mainPanel.add(panelEast, BorderLayout.EAST);
-        mainPanel.add(buttonSave, BorderLayout.SOUTH);
 
-        add(mainPanel);
-        pack();
-        setVisible(true);
+            JPanel mainPanel = new JPanel(new BorderLayout());
+            mainPanel.add(label, BorderLayout.WEST);
+            mainPanel.add(panelEast, BorderLayout.EAST);
+            mainPanel.add(buttonSave, BorderLayout.SOUTH);
+
+            add(mainPanel);
+            pack();
+            setVisible(true);
+        }
     }
 }
