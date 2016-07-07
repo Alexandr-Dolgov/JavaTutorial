@@ -13,8 +13,11 @@ import java.io.IOException;
 /**
  * Created by AK on 29.05.2016.
  */
-public class SaveFrame extends JFrame{
-    public SaveFrame(){
+public class SaveFrame extends JFrame {
+
+    JComboBox formatsComboBox;
+
+    public SaveFrame() {
         super();
 
         setTitle("save");
@@ -23,8 +26,12 @@ public class SaveFrame extends JFrame{
         int columns = 15;
         final JTextField field = new JTextField(columns);
 
-        JPanel panelEast = new JPanel(new FlowLayout());
+        String[] formats = {"txt", "json", "obj"};
+        formatsComboBox = new JComboBox(formats);
+
+        JPanel panelEast = new JPanel(new GridLayout(2, 1, 5, 5));
         panelEast.add(field);
+        panelEast.add(formatsComboBox);
 
         final JLabel label = new JLabel("path");
 
@@ -32,18 +39,27 @@ public class SaveFrame extends JFrame{
         buttonSave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (!formatsComboBox.getSelectedItem().equals("txt")) {
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "этот функционал еще не реализован",
+                            "",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    return;
+                }
+
                 Dictionary words = DictionaryHolder.getInstance().getDictionary();
                 try {
                     String pathName = field.getText();
                     words.writeToFile(pathName);
-                    setVisible(false);
                     JOptionPane.showMessageDialog(
                             null,
                             "файл записан и сохранен",
                             "",
                             JOptionPane.INFORMATION_MESSAGE);
-                }catch (IOException ex){
-                    JOptionPane.showConfirmDialog(
+                    setVisible(false);
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(
                             null,
                             "ошибка при записи",
                             "",
@@ -51,6 +67,7 @@ public class SaveFrame extends JFrame{
                 }
             }
         });
+
 
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.add(label, BorderLayout.WEST);
@@ -60,5 +77,6 @@ public class SaveFrame extends JFrame{
         add(mainPanel);
         pack();
         setVisible(true);
+
     }
 }
